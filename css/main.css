@@ -1,0 +1,104 @@
+
+
+/* контент */
+#cabinet main{    
+    padding: 5px 20px 20px 50px;
+}
+
+
+
+/* заголовок */
+#cabinet main h1{
+    margin: 0 0 20px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+
+
+/* блок з контуром */
+#cabinet .block{
+    border-radius: 5px;
+    border: 1px solid var(--gray-light);
+    padding: 10px;
+    margin: 20px 0 40px;
+}
+
+/* підзаголовок */
+#cabinet main h2{
+    position: relative;
+    font-size: 16px;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0 5px 20px;
+    margin: 0 0 20px;
+}
+
+#cabinet main h2::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--gray);
+    display: block;
+    border-radius: 5px;
+}
+
+#cabinet main h2 svg{
+    width: 22px;
+    height: 22px;
+}
+
+/* іконка і підпис зліва */
+#cabinet main h2 span{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#cabinet main h2 span svg{
+    margin-right: 10px;
+}
+
+/* кнопка редагування */
+.icon-link{
+    fill: var(--blue);
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    margin-left: auto;
+}
+
+
+
+/* описи ліво/право */
+#user-data{
+    display: block;
+    padding: 10px 0 10px 20px;
+}
+
+/* лівий блок */
+#user-data li{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border-top: 1px solid var(--gray-light);
+    padding: 10px 0;
+}
+
+/* правий блок (з іконкою)*/
+#user-data li p:first-child{
+    color: var(--gray);
+}
+
+#user-data li:first-child{
+    border: none;
+}
+
+#user-data li p{
+    display: flex;
+    align-items: center;
+}

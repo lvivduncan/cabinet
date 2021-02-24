@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: var(--black);
+}
+
+
+/* основний блок кабінету */
+#cabinet{
+    width: 1170px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+@media(max-width: 1180px){
+    #cabinet{
+        width: 95%;
+    }
+}
+
+:root{
+    --blue: #4a9ad5; /* #4c9bd5 */
+
+    --gray: #a5a5a6; /* #a6a7a7 */
+    --gray-light: #eceded; /* #c4c1bf */
+    --gray-dark: #534d54;
+    --text: #8a8887;
+
+    --green: #47ad33;
+    --green-light: #d7e4cc;
+
+    --black: #1b1b1a;
+    --white: #fff;
+}
+
+hr{
+    border-top: 1px solid var(--gray-light);
+    height: 0;
+    margin: 10px 0;
+}

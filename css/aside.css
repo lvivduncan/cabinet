@@ -1,0 +1,91 @@
+
+
+/* ліве меню */
+#cabinet aside{
+    border-right: 1px solid var(--gray-light);
+}
+
+
+
+/* логін, баланс, дата */
+#user-name{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background: var(--gray-light);
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    align-items: center;
+}
+
+/* іконка зліва */
+.aside-icon{
+    padding: 10px;
+    text-align: center;
+}
+
+.aside-icon svg{
+    width: 26px;
+    height: 26px;
+    fill: var(--black);
+}
+
+/* дані справа */
+#user-name-description p{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text);
+}
+
+#user-name-description strong{
+    color: var(--black);
+    font-weight: normal;
+}
+
+
+
+/* синя плашка */
+#sticked{
+    margin: 20px 0;
+    padding: 10px 20px;
+    background: var(--blue);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    align-items: center;
+    text-decoration: none;
+}
+
+#sticked svg{
+    fill: var(--white);
+    width: 26px;
+    height: 26px;
+}
+
+
+
+/* меню */
+#cabinet aside ul,
+#cabinet aside li{
+    display: block;
+}
+
+#cabinet aside li a{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--black);
+    padding: 0 5px;
+    margin: 0 15px;
+    line-height: 1;
+    transition: .1s;
+}
+
+#cabinet aside li a:hover,
+#cabinet aside li a.active{
+    background: var(--gray-light);
+    border-radius: 5px;
+}
