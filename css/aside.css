@@ -9,7 +9,7 @@
 
 /* логін, баланс, дата */
 #user-name{
-    margin: 10px;
+    margin: 0 20px;
     padding: 10px;
     border-radius: 5px;
     background: var(--gray-light);

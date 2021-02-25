@@ -38,10 +38,12 @@ body{
 
     --black: #1b1b1a;
     --white: #fff;
+
+    --red: #e30b0b;
 }
 
 hr{
     border-top: 1px solid var(--gray-light);
     height: 0;
     margin: 10px 0;
-}
+} 
