@@ -24,6 +24,11 @@
     margin: 20px 0 40px;
 }
 
+/* короткий опис в 1 абзац */
+#cabinet .block .description{
+    padding: 0 20px;
+}
+
 /* підзаголовок */
 #cabinet main h2{
     position: relative;
@@ -97,7 +102,7 @@ a.icon-link svg{
 /* описи ліво/право */
 .user-data{
     display: block;
-    margin: 10px 0 10px 20px;
+    margin: 10px 20px;
 }
 
 /* лівий блок */
@@ -135,9 +140,17 @@ a.icon-link svg{
 
 /* поле, яке редагується */
 p.edited{
-    border-bottom: 2px dotted var(--red);
+    /* border-bottom: 2px dotted var(--red); */
+    background: var(--yellow);
 }
 
+
+
+/* поле, де перемикається кнопка тарифу */
+p.change{
+    align-items: flex-start!important;
+    justify-content: center;
+}
 
 
 /* Кнопка підтвердження */
@@ -145,11 +158,16 @@ p.edited{
     display: none;
 }
 
+/* якщо вона вкладена, то має додатковий відступ */
+.block #user-confirm{
+    margin: 0 20px;
+}
+
 #user-confirm.show{
     display: block;
 }
 
-#user-confirm button{
+button{
     padding: 5px;
     text-align: center;
     cursor: pointer;
@@ -157,74 +175,16 @@ p.edited{
     background: var(--blue);
     border-radius: 5px;
     border: none;
+    outline: none;
     width: 100%;
     display: block;
     margin: 0 0 20px;
+    transition: .5s;
+}
+
+button:hover{
+    background: var(--green);
 }
 
 
 
-/* блок кнопок */
-#cabinet input[type="radio"]{
-    margin: 0 20px;
-}
-
-#cabinet label{
-    padding: 5px;
-    cursor: pointer;
-    width: 100%;
-    display: block;
-    border: 1px solid var(--white);
-    border-radius: 5px;
-}
-
-#cabinet label:hover{
-    border-color: var(--blue);
-}
-
-
-
-/* селект у назві тарифа телебачення */
-#cabinet .jq-selectbox{
-    cursor: pointer;
-    margin-left: 12px;
-}
-
-/* кутик */
-#cabinet .jq-selectbox__trigger-arrow{
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='%234a9ad5'%3E%3Cpath d='M125.1 208h197.8c10.7 0 16.1 13 8.5 20.5l-98.9 98.3c-4.7 4.7-12.2 4.7-16.9 0l-98.9-98.3c-7.7-7.5-2.3-20.5 8.4-20.5zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z'/%3E%3C/svg%3E");
-    width: 20px;
-    height: 24px;
-}
-
-.jq-selectbox__select-text{
-    position: relative;
-    font-size: 16px;
-}
-
-.jq-selectbox__trigger {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 22px;
-    height: 20px;
-}
-
-.jq-selectbox__dropdown {
-    width: 100%;
-}
-
-.jq-selectbox__dropdown ul{
-    background: var(--white);
-    width: 100%;
-    border: 1px solid var(--gray-light);
-    margin-top: 10px;
-    padding: 0 10px;
-    border-radius: 5px;
-}
-
-.jq-selectbox__dropdown ul li{
-    padding: 5px;
-    width: 100%;
-    font-size: 16px;
-}

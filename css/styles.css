@@ -8,4 +8,13 @@
 
 /* стилізація селектів, інпутів */
 @import url('./jquery.formstyler.css');
-/* @import url('./jquery.formstyler.theme.css'); */
+@import url('./jquery.formstyler.theme.css');
+
+/* стилізація чекбоксів */
+@import url('./checkbox.css');
+
+/* лайтбокс */
+@import url('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css');
+
+/* модальне вікно */
+@import url('./aprouve.css');
