@@ -140,6 +140,10 @@ ul.user-data.borders{
     border-bottom: 1px solid var(--gray-light);
 }
 
+ul.user-data strong{
+    color: var(--red);
+}
+
 
 
 /* опис зліва і кнопка справа */
@@ -155,18 +159,6 @@ ol.user-data li{
     padding: 10px 0;
 }
 
-/* кнопка видалення */
-ol.user-data .delete{
-    float: right;
-    cursor: pointer;
-}
-
-ol.user-data li svg{
-    width: 22px;
-    height: 22px;
-    fill: var(--blue);
-}
-
 ol.user-data a{
     color: var(--blue);
     text-decoration: underline;
@@ -179,6 +171,27 @@ ol.user-data a:hover{
 ol.user-data strong{
     color: var(--blue);
 }
+
+
+
+/* кнопка видалення */
+.user-data .icon-on-the-right{
+    float: right;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.user-data li svg{
+    width: 22px;
+    height: 22px;
+    fill: var(--blue);
+}
+
+
+
+
+/* todo: disabled field */
+
 
 
 

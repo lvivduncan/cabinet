@@ -8,7 +8,6 @@
 
 /* стилізація селектів, інпутів */
 @import url('./jquery.formstyler.css');
-@import url('./jquery.formstyler.theme.css');
 
 /* стилізація чекбоксів */
 @import url('./checkbox.css');
