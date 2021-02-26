@@ -27,6 +27,7 @@
 /* короткий опис в 1 абзац */
 #cabinet .block .description{
     padding: 0 20px;
+    display: block;
 }
 
 /* підзаголовок */
