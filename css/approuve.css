@@ -1,7 +1,7 @@
 
 
 /* модальне вікно */
-#aprouve{
+#approuve{
     background: var(--black);
     color: var(--white);
     border-radius: 5px;
@@ -10,15 +10,15 @@
     text-align: center;
 }
 
-#aprouve p{
+#approuve p{
     margin: 10px 0;
 }
 
-#aprouve strong{
+#approuve strong{
     color: var(--gold);
 }
 
-#aprouve input[type="password"]{
+#approuve input[type="password"]{
     width: 100%;
     margin: 10px 0;
     padding: 10px;
@@ -29,18 +29,18 @@
     border-radius: 5px;
 }
 
-#aprouve ::placeholder{
+#approuve ::placeholder{
     color: var(--white)
 }
 
 /* кнопка закриття */
-#aprouve-close{
+#approuve-close{
     position: absolute;
     top: 10px;
     right: 10px;
 }
 
-#aprouve-close svg{
+#approuve-close svg{
     width: 22px;
     height: 22px;
     fill: var(--white);

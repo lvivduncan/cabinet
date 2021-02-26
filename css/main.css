@@ -53,6 +53,11 @@
     border-radius: 5px;
 }
 
+/* якщо послуга підключена, то вертикальна смужка зліва стає зеленою */
+#cabinet main h2.active::before{
+    background: var(--green);
+}
+
 #cabinet main h2 svg{
     width: 22px;
     height: 22px;
@@ -100,47 +105,85 @@ a.icon-link svg{
 
 
 /* описи ліво/право */
-.user-data{
+ul.user-data{
     display: block;
     margin: 10px 20px;
 }
 
 /* лівий блок */
-.user-data li{
+ul.user-data li{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     border-top: 1px solid var(--gray-light);
 }
 
-.user-data li:first-child{
+ul.user-data li:first-child{
     border: none;
 }
 
-.user-data li p{
+ul.user-data li p{
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 10px 0 10px 10px;
     margin: 0!important;
 }
 
 /* правий блок (з іконкою)*/
-.user-data li p:first-child{
+ul.user-data li p:first-child{
     color: var(--gray);
     padding: 10px 0;
 }
 
-
 /* у деяких шаблонах юзер-дата має бордери вгорі та низу */
-.user-data.borders{
+ul.user-data.borders{
     border-top: 1px solid var(--gray-light);
     border-bottom: 1px solid var(--gray-light);
 }
 
 
 
+/* опис зліва і кнопка справа */
+ol.user-data{
+    display: block;
+    margin: 10px 20px;
+}
+
+ol.user-data li{
+    color: var(--gray);
+    border-top: 1px solid var(--gray-light);
+    list-style-position: inside;
+    padding: 10px 0;
+}
+
+/* кнопка видалення */
+ol.user-data .delete{
+    float: right;
+    cursor: pointer;
+}
+
+ol.user-data li svg{
+    width: 22px;
+    height: 22px;
+    fill: var(--blue);
+}
+
+ol.user-data a{
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+ol.user-data a:hover{
+    text-decoration: none;
+}
+
+ol.user-data strong{
+    color: var(--blue);
+}
+
+
+
 /* поле, яке редагується */
 p.edited{
-    /* border-bottom: 2px dotted var(--red); */
     background: var(--yellow);
 }
 
@@ -150,6 +193,13 @@ p.edited{
 p.change{
     align-items: flex-start!important;
     justify-content: center;
+}
+
+p.change svg{
+    width: 22px;
+    height: 22px;
+    fill: var(--blue);
+    cursor: pointer;
 }
 
 
@@ -165,6 +215,13 @@ p.change{
 
 #user-confirm.show{
     display: block;
+}
+
+/* відключена кнопка */
+#user-confirm.disabled button{
+    pointer-events: none;
+    background: var(--gray-light);
+    color: var(--black);
 }
 
 button{
@@ -185,6 +242,5 @@ button{
 button:hover{
     background: var(--green);
 }
-
 
 

@@ -13,7 +13,7 @@
 
 .jq-selectbox__select-text{
     position: relative;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .jq-selectbox__trigger {
@@ -33,14 +33,14 @@
     width: 100%;
     border: 1px solid var(--gray-light);
     margin-top: 10px;
-    padding: 0 10px;
+    padding: 10px;
     border-radius: 5px;
 }
 
 .jq-selectbox__dropdown ul li{
     padding: 5px;
     width: 100%;
-    font-size: 16px;
+    /* font-size: 16px; */
 }
 
 /**/
