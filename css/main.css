@@ -90,7 +90,7 @@
 
 
 
-/* кнопка редагування */
+/* кнопка редагування справа (або чекбокс)*/
 .icon-link{
     fill: var(--blue);
     cursor: pointer;
@@ -107,6 +107,11 @@ a.icon-link svg{
     margin-left: auto;
 }
 
+.icon-link input{
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
 
 
 /* описи ліво/право */
