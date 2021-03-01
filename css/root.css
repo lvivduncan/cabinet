@@ -4,27 +4,6 @@
     box-sizing: border-box;
 }
 
-body{
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    color: var(--black);
-}
-
-
-/* основний блок кабінету */
-#cabinet{
-    width: 1170px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-}
-
-@media(max-width: 1180px){
-    #cabinet{
-        width: 95%;
-    }
-}
-
 :root{
     --blue: #4a9ad5; /* #4c9bd5 */
 
@@ -42,6 +21,32 @@ body{
     --red: #e30b0b;
     --yellow: #ffffe3;
     --gold: gold;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: var(--black);
+}
+
+/* основний блок кабінету */
+#cabinet{
+    width: 1170px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+@media(max-width: 1180px){
+    #cabinet{
+        width: 95%;
+    }
+}
+
+@media(max-width: 996px){
+    #cabinet{
+        grid-template-columns: 1fr;
+    }
 }
 
 hr{

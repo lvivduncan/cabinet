@@ -1,0 +1,102 @@
+/* табличні дані */
+
+.history-pay {
+    border-collapse: collapse;
+    /* margin: 0; */
+    /* padding: 0; */
+    width: 100%;
+    table-layout: fixed;
+}
+
+.history-pay tr {
+    display: grid;
+    grid-template-columns: 1fr 2fr repeat(2,1fr) 2fr;
+}
+
+.history-pay th,
+.history-pay td {
+    padding: 5px 10px;
+}
+
+.history-pay th {
+    font-size: 14px;
+    color: var(--gray);
+    font-weight: normal;
+}
+
+/* заголовки */
+thead tr{
+    border: none;
+}
+
+thead th{
+    text-align: left;
+    padding: 5px 5px 10px;
+}
+
+tbody tr {
+    border-top: 1px solid var(--gray-light);
+}
+
+tbody tr:first-child {
+    border-top: none;
+}
+
+.history-pay .plus{
+    color: var(--green);
+}
+
+.history-pay .minus{
+    color: var(--red);
+}
+
+/* дата на всю ширину */
+.table-date{
+    text-align: left;
+    background: var(--gray-light);
+    border: none;
+}
+
+@media (max-width: 996px){
+    .table-date{
+        text-align: center;
+    }   
+}
+
+.table-date th{
+    color: var(--black);
+}
+
+@media (max-width: 996px) {
+    .history-pay {
+        border: 0;
+    }
+
+    .history-pay thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .history-pay tr {
+        display: block;
+    }
+
+    .history-pay td {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .history-pay td::before {
+        content: attr(data-label);
+    }
+
+    .history-pay td:last-child {
+        border-bottom: 0;
+    }
+}

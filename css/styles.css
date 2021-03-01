@@ -2,8 +2,10 @@
 
 @import url('./root.css');
 
+/* сайдбар */
 @import url('./aside.css');
 
+/* основна шпальта */
 @import url('./main.css');
 
 /* стилізація селектів, інпутів */
@@ -13,7 +15,10 @@
 @import url('./checkbox.css');
 
 /* лайтбокс */
-@import url('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css');
+@import url('./jquery.fancybox.min.css');
 
 /* модальне вікно */
 @import url('./approuve.css');
+
+/* табличні дані */
+@import url('./table.css');

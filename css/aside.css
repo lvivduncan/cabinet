@@ -6,6 +6,12 @@
 }
 
 
+@media(max-width: 996px){
+    #cabinet aside{
+        display: none;
+    }
+}
+
 
 /* логін, баланс, дата */
 #user-name{
