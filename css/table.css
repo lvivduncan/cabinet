@@ -171,3 +171,74 @@ tbody tr:first-child {
     }
 
 }
+
+/* бонуси від друзів */
+.history-friend tr{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.history-friend thead tr{
+    border: none;
+}
+
+.history-friend thead th{
+    padding: 5px 0 15px;
+    color: var(--gray);
+    font-weight: normal;
+    text-align: left;
+}
+
+.history-friend tbody tr{
+    border-top: 1px solid var(--gray-light);
+}
+
+.history-friend tbody tr:first-child{
+    border-top: none;
+}
+
+.history-friend tbody td{
+    padding: 5px 0;
+}
+
+@media (max-width: 996px) {
+
+    .history-friend thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .history-friend tr {
+        display: block;
+    }
+
+    .history-friend td {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .history-friend td::before {
+        content: attr(data-label);
+        color: var(--gray);
+    }
+
+    .history-friend tbody tr{
+        border: none;
+        margin: 0 0 20px;
+    }
+
+    .history-friend tbody td{
+        border-top: 1px solid var(--gray-light);
+    }
+
+    .history-friend tbody td:first-child{
+        border-top: none;
+    }
+
+}

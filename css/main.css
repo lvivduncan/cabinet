@@ -189,6 +189,7 @@ ol.user-data strong{
     float: right;
     cursor: pointer;
     margin-left: auto;
+    color: var(--blue)
 }
 
 .user-data li svg{
@@ -196,6 +197,18 @@ ol.user-data strong{
     height: 22px;
     fill: var(--blue);
 }
+
+
+
+/* поле для вставки коду від друга */
+.user-data input[type="text"]{
+    width: 100%;
+    padding: 5px;
+    border: 1px solid var(--gray-light);
+    border-radius: 5px;
+    outline: none;
+}
+
 
 
 
