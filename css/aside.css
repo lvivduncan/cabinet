@@ -95,3 +95,21 @@
     background: var(--gray-light);
     border-radius: 5px;
 }
+
+
+
+#cabinet aside li span{
+    position: relative;
+}
+
+/* кількість справа */
+#cabinet aside li span b{
+    position: absolute;
+    top: -5px;
+    right: 0;
+    background: var(--blue);
+    border-radius: 50%;
+    text-align: center;
+    padding: 5px 4px;
+    font-size: 12px;
+}

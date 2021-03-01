@@ -260,3 +260,38 @@ button{
 button:hover{
     background: var(--green);
 }
+
+
+/* header message */
+/* дві кнопки перемикання чекбоксів */
+.main-header{
+    border: 1px solid var(--gray-light);
+    border-left: none;
+    border-right: none;
+    padding: 10px 20px;
+}
+
+.main-header span{
+    display: inline-flex;
+    align-items: center;
+    margin: 0 20px 0 0;
+    cursor: pointer;
+    color: var(--gray);
+}
+
+.main-header span svg{
+    width: 22px;
+    height: 22px;
+    fill: var(--gray);
+    margin: 0 10px 0 0;
+}
+
+.main-header span:hover,
+.main-header span.active{
+    color: var(--black);
+}
+
+.main-header span:hover svg,
+.main-header span.active svg{
+    fill: var(--black);
+}
