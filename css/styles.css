@@ -8,6 +8,9 @@
 /* основна шпальта */
 @import url('./main.css');
 
+/* кнопка редагування */
+@import url('./edit.css');
+
 /* стилізація селектів, інпутів */
 @import url('./jquery.formstyler.css');
 
