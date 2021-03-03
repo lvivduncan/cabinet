@@ -229,12 +229,13 @@ p.change svg{
     display: block;
 }
 
-/* відключена кнопка */
+/* відключена кнопка */ /*** del ***/
 #user-confirm.disabled button{
     pointer-events: none;
     background: var(--gray-light);
     color: var(--black);
 }
+/*** del ***/
 
 button{
     padding: 5px;
