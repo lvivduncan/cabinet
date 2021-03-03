@@ -23,6 +23,16 @@
 }
 
 
+#hidden-area-2{
+    display: none;
+}
+
+/* прихований блок */
+#hidden-area-2.active{
+    display: block;
+}
+
+
 /* неактивний блок */
 #disabled-area{
     pointer-events: none;

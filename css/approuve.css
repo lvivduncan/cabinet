@@ -1,7 +1,7 @@
 
 
 /* модальне вікно */
-#approuve{
+.approuve{
     background: var(--black);
     color: var(--white);
     border-radius: 5px;
@@ -10,15 +10,15 @@
     text-align: center;
 }
 
-#approuve p{
+.approuve p{
     margin: 10px 0;
 }
 
-#approuve strong{
+.approuve strong{
     color: var(--gold);
 }
 
-#approuve input[type="password"]{
+.approuve input[type="password"]{
     width: 100%;
     margin: 10px 0;
     padding: 10px;
@@ -29,7 +29,7 @@
     border-radius: 5px;
 }
 
-#approuve ::placeholder{
+.approuve ::placeholder{
     color: var(--white)
 }
 
