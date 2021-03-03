@@ -17,10 +17,20 @@
     display: none;
 }
 
+/* прихований блок */
 #hidden-area.active{
     display: block;
 }
 
+
+/* неактивний блок */
+#disabled-area{
+    pointer-events: none;
+}
+
+#disabled-area.active{
+    pointer-events: unset;
+}
 
 
 /** del **/

@@ -179,8 +179,3 @@
     background: var(--blue);
     color: var(--white);
 }
-
-/* неактивний елемент */
-.jq-selectbox.disabled{
-	pointer-events: none;
-}
