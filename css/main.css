@@ -225,6 +225,16 @@ p.change svg{
     display: none;
 }
 
+#user-confirm.disabled{
+    display: block;
+}
+
+#user-confirm.disabled button{
+    pointer-events: none;
+    background: var(--gray-light);
+    color: var(--black);
+}
+
 /* якщо вона вкладена, то має додатковий відступ */
 .block #user-confirm{
     margin: 0 20px;
