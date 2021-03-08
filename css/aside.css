@@ -15,13 +15,16 @@
 
 /* логін, баланс, дата */
 #user-name{
-    margin: 0 20px;
+    margin: 0 10px;
     padding: 10px;
     border-radius: 5px;
-    background: var(--gray-light);
     display: grid;
     grid-template-columns: 50px 1fr;
     align-items: center;
+}
+
+#user-name.active{
+    background: var(--gray-light);
 }
 
 /* іконка зліва */

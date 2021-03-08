@@ -90,6 +90,7 @@
 
 
 
+
 /* описи ліво/право */
 ul.user-data{
     display: block;
@@ -189,14 +190,18 @@ ol.user-data strong{
 
 
 
-/* todo: disabled field */
+/* поля, які редагуються */
+.edit-area{}
 
-
-
+.edit-area input[type="text"]{
+    border: none;
+    pointer-events: none;
+}
 
 /* поле, яке редагується */
-p.edited{
+p.edited input[type="text"]{
     background: var(--yellow);
+    pointer-events: auto;
 }
 
 
