@@ -219,6 +219,24 @@ p.change svg{
     cursor: pointer;
 }
 
+/* поле зі сумою для поповнення */
+#sum{    
+    padding: 5px;
+    border: 1px solid var(--gray-light);
+    border-radius: 5px;
+    outline: none;
+    width: 70px;
+    margin: 0 10px 0 0;
+
+
+}
+
+#sum::-webkit-outer-spin-button,
+#sum::-webkit-inner-spin-button{
+    -moz-apperance: none;
+    -webkit-appearance: none;
+    appearance: none;    
+}
 
 /* Кнопка підтвердження */
 #user-confirm{

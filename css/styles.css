@@ -12,10 +12,10 @@
 @import url('./edit.css');
 
 /* стилізація селектів, інпутів */
-@import url('./jquery.formstyler.css');
+/* @import url('./jquery.formstyler.css'); */
 
-/* стилізація чекбоксів */
-@import url('./checkbox.css');
+/* стилізація чекбоксів, селектів, інпутів */
+@import url('./inputs.css');
 
 /* лайтбокс */
 @import url('./jquery.fancybox.min.css');
