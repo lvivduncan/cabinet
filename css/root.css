@@ -54,3 +54,12 @@ hr{
     height: 0;
     margin: 10px 0;
 } 
+
+/* colors */
+.green{
+    color: var(--green);
+}
+
+.red{
+    color: var(--red);
+}

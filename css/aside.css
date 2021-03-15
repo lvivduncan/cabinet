@@ -27,10 +27,20 @@
     background: var(--gray-light);
 }
 
+#user-name a{
+    color: var(--green);
+    font-weight: 800;
+}
+
+
+
+
+
 /* іконка зліва */
 .aside-icon{
     padding: 10px;
     text-align: center;
+    position: relative;
 }
 
 .aside-icon svg{
@@ -39,12 +49,64 @@
     fill: var(--black);
 }
 
+/* до іконки можуть бути додані міні-іконки */
+.aside-icon .status{
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+    z-index: 1;
+
+    background: var(--white);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+.aside-icon .status svg{
+    width: 16px;
+    height: 16px;
+}
+
+
+
+
+/* колір іконок */
+.aside-icon .status.red svg{
+    fill: var(--red)
+}
+
+.aside-icon .status.green svg{
+    fill: var(--green)
+}
+
+.aside-icon .status.black svg{
+    fill: var(--black)
+}
+
+
+
+
 /* дані справа */
-#user-name-description p{
+#user-name-description{
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: var(--text);
+}
+
+#user-name-description p{
+    border-left: 1px solid var(--gray);
+    padding-left: 10px;
+}
+
+#user-name-description p:first-child{
+    border: none;
+    padding: 0;
+}
+
+#user-name-description strong,
+#user-name-description span{
+    display: block;
 }
 
 #user-name-description strong{

@@ -59,9 +59,24 @@
 }
 
 /* якщо послуга підключена, то вертикальна смужка зліва стає зеленою */
-#cabinet main h2.active::before{
-    background: var(--green);
+#cabinet main h2.green{
+    color: var(--black)
 }
+
+#cabinet main h2.green::before{
+    background: var(--green)
+}
+
+/* червона смужка */
+#cabinet main h2.red{
+    color: var(--black)
+}
+#cabinet main h2.red::before{
+    background: var(--red)
+}
+
+
+
 
 #cabinet main h2 svg{
     width: 22px;
@@ -97,11 +112,18 @@ ul.user-data{
     margin: 10px 20px;
 }
 
+
 /* лівий блок */
 ul.user-data li{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     border-top: 1px solid var(--gray-light);
+}
+
+@media(max-width: 540px){
+    ul.user-data li{
+        grid-template-columns: 1fr;
+    }
 }
 
 ul.user-data li:first-child{
@@ -113,6 +135,12 @@ ul.user-data li p{
     align-items: center;
     padding: 10px 0 10px 10px;
     margin: 0!important;
+}
+
+@media(max-width: 540px){
+    ul.user-data li p{
+        padding: 10px 0;
+    }
 }
 
 /* правий блок (з іконкою)*/
@@ -196,28 +224,49 @@ ol.user-data strong{
 .edit-area input[type="text"]{
     border: none;
     pointer-events: none;
+    padding-left: 0;
 }
 
 /* поле, яке редагується */
-p.edited input[type="text"]{
+.edited .edit-area input[type="text"]{
     background: var(--yellow);
     pointer-events: auto;
+    padding-left: 5px;
 }
 
 
 
+/* щоб кнопка не перекидилася на новий рядок */
+@media (max-width: 540px){
+    ul.user-data li.change{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
 /* поле, де перемикається кнопка тарифу */
-p.change{
+.change p{
     align-items: flex-start!important;
     justify-content: center;
 }
 
-p.change svg{
+@media(max-width: 540px){
+    .change p{
+        justify-content: flex-end;
+    }
+    .change p:first-child{
+        justify-content: flex-start;
+    }
+}
+
+.change svg{
     width: 22px;
     height: 22px;
     fill: var(--blue);
     cursor: pointer;
 }
+
+
+
 
 /* поле зі сумою для поповнення */
 #sum{    
@@ -231,6 +280,7 @@ p.change svg{
 
 }
 
+/* ховаємо стрілочки */
 #sum::-webkit-outer-spin-button,
 #sum::-webkit-inner-spin-button{
     -moz-apperance: none;
@@ -238,7 +288,12 @@ p.change svg{
     appearance: none;    
 }
 
-/* Кнопка підтвердження */
+
+
+
+
+
+/* Кнопка підтвердження (del) */
 #user-confirm{
     display: none;
 }
@@ -261,6 +316,34 @@ p.change svg{
 #user-confirm.show{
     display: block;
 }
+/* Кнопка підтвердження (del) */
+
+
+/* Кнопка підтвердження (має бути у кожного блоку своя) */
+.user-confirm{
+    
+}
+
+/* button по дефолту неактивний */
+.user-confirm button{
+    pointer-events: none;
+    background: var(--gray-light);
+    color: var(--black);
+}
+
+.user-confirm.active button{
+    pointer-events: auto;
+    background: var(--green);
+    color: var(--white);
+}
+
+
+
+
+
+
+
+
 
 button{
     padding: 8px;
@@ -280,6 +363,9 @@ button{
 button:hover{
     background: var(--green);
 }
+
+
+
 
 
 /* header message */

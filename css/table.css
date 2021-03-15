@@ -16,6 +16,16 @@ table {
     padding: 5px 10px;
 }
 
+/* 3 i 4 колонка */
+.history-pay th:nth-child(3),
+.history-pay td:nth-child(3),
+.history-pay th:nth-child(4),
+.history-pay td:nth-child(4) {
+    text-align: center
+}
+
+
+
 .history-pay th {
     font-size: 14px;
     color: var(--gray);
