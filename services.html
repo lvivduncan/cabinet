@@ -295,9 +295,16 @@
                                     <i><input type="radio" name="days" id="day-26" class="day"><label for="day-26">26</label></i>
                                     <i><input type="radio" name="days" id="day-27" class="day"><label for="day-27">27</label></i>
                                     <i><input type="radio" name="days" id="day-28" class="day"><label for="day-28">28</label></i>
+
+                                    <!-- <em><input type="radio" name="days" id="day-29" class="day" disabled><label for="day-29">29</label></em>
+                                    <em><input type="radio" name="days" id="day-30" class="day" disabled><label for="day-30">30</label></em>
+                                    <em><input type="radio" name="days" id="day-31" class="day" disabled><label for="day-31">31</label></em> -->
+
                                     <i><input type="radio" name="days" id="day-29" class="day" disabled><label for="day-29">29</label></i>
                                     <i><input type="radio" name="days" id="day-30" class="day" disabled><label for="day-30">30</label></i>
                                     <i><input type="radio" name="days" id="day-31" class="day" disabled><label for="day-31">31</label></i>
+
+
                                 </span>
                             </p>
                         </li>
@@ -358,8 +365,45 @@
 
             // 2.2 клік на день
             $('.day').on('click', function(){
-                var number = $(this).next().text();
+                var number = +$(this).next().text();
                 $('.select-date').text(number);
+
+                $('.select-days i').each(function(){
+
+                    $(this).removeClass('lighting');
+
+                });
+
+                // підсвітка 5 наступних
+                if(number == 27){                    
+
+                    $(this).parent().next('i').addClass('lighting');
+                    $(this).parent().next('i').next('i').addClass('lighting');
+                    $(this).parent().next('i').next('i').next('i').addClass('lighting');
+                    $(this).parent().next('i').next('i').next('i').next('i').addClass('lighting');
+
+                    // + 1 число
+                    $('.select-days i').eq(0).addClass('lighting');
+
+                } else if(number == 28) {
+
+                    $(this).parent().next('i').addClass('lighting');
+                    $(this).parent().next('i').next('i').addClass('lighting');
+                    $(this).parent().next('i').next('i').next('i').addClass('lighting');
+
+                    // +1 i 2
+                    $('.select-days i').eq(0).addClass('lighting');
+                    $('.select-days i').eq(1).addClass('lighting');
+
+                } else {
+                    $(this).parent().next('i').addClass('lighting');
+                    $(this).parent().next('i').next('i').addClass('lighting');
+                    $(this).parent().next('i').next('i').next('i').addClass('lighting');
+                    $(this).parent().next('i').next('i').next('i').next('i').addClass('lighting');
+                    $(this).parent().next('i').next('i').next('i').next('i').next('i').addClass('lighting');
+                }
+
+                
             });
 
             // 3. fancybox
