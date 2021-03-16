@@ -249,13 +249,17 @@ ol.user-data strong{
     justify-content: center;
 }
 
+.change p:first-child{
+    justify-content: flex-start;
+}
+
 @media(max-width: 540px){
     .change p{
         justify-content: flex-end;
     }
-    .change p:first-child{
+/*     .change p:first-child{
         justify-content: flex-start;
-    }
+    } */
 }
 
 .change svg{
