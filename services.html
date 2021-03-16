@@ -262,7 +262,7 @@
                         </li> 
                         <li>
                             <p>Оберіть день зняття абонплати</p>
-                            <p class="selects">
+                            <p class="selects disabled-select">
                                 <span class="select-date">
                                     14
                                 </span>
@@ -296,14 +296,11 @@
                                     <i><input type="radio" name="days" id="day-27" class="day"><label for="day-27">27</label></i>
                                     <i><input type="radio" name="days" id="day-28" class="day"><label for="day-28">28</label></i>
 
-                                    <!-- <em><input type="radio" name="days" id="day-29" class="day" disabled><label for="day-29">29</label></em>
-                                    <em><input type="radio" name="days" id="day-30" class="day" disabled><label for="day-30">30</label></em>
-                                    <em><input type="radio" name="days" id="day-31" class="day" disabled><label for="day-31">31</label></em> -->
-
+                                    <!-- неактивні -->
                                     <i><input type="radio" name="days" id="day-29" class="day" disabled><label for="day-29">29</label></i>
                                     <i><input type="radio" name="days" id="day-30" class="day" disabled><label for="day-30">30</label></i>
                                     <i><input type="radio" name="days" id="day-31" class="day" disabled><label for="day-31">31</label></i>
-
+                                    <!-- неактивні -->
 
                                 </span>
                             </p>
@@ -353,25 +350,39 @@
                 $(this).siblings('.hidden-area').fadeToggle();
             });
 
-            // 2. якщо клік -- кнопка стає активною
+
+            // 2.1.1 якщо клік -- кнопка стає активною
             $('input[type="checkbox"]').on('input', function () {
-                $(this).parents('.hidden-area').children('.user-confirm').toggleClass('active');
+                // якщо змінили статус
+                $(this).parents('.hidden-area').children('.user-confirm').addClass('active');
+
+                // перевірка чи активна послуга (для активації полів)
+                if($(this).prop('checked')){
+                    $(this).parents('.user-data').find('select, .selects').removeClass('disabled-select');
+                } else {
+                    $(this).parents('.user-data').find('select, .selects').addClass('disabled-select');
+                }
             });
 
-            // 2.1 вибір дати
+            // 2.1.2 якщо мінялося поле селекта
+            $('select').on('input', function(){
+                $(this).parents('.hidden-area').children('.user-confirm').addClass('active');
+            });
+
+
+            // 2.2.1 вибір дати
             $('.select-date').on('click', function(){
                 $(this).next('.select-days').toggleClass('active');
             });
 
-            // 2.2 клік на день
+            // 2.2.2 клік на день
             $('.day').on('click', function(){
                 var number = +$(this).next().text();
                 $('.select-date').text(number);
 
+                // очистка
                 $('.select-days i').each(function(){
-
                     $(this).removeClass('lighting');
-
                 });
 
                 // підсвітка 5 наступних
@@ -403,8 +414,11 @@
                     $(this).parent().next('i').next('i').next('i').next('i').next('i').addClass('lighting');
                 }
 
+                // якщо клікнули на день
+                $(this).parents('.hidden-area').children('.user-confirm').addClass('active');
                 
             });
+
 
             // 3. fancybox
 
