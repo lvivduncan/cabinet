@@ -123,11 +123,6 @@ select {
 	cursor: pointer;
 }
 
-/* неактивний селект */
-.disabled-select{
-	pointer-events: none;
-}
-
 
 /* обгортка для селект-дати */
 .selects{
@@ -212,4 +207,18 @@ select {
 .lighting label,
 .lighting .day:disabled + label{
 	background: var(--green-light);
+}
+
+
+/* неактивний селект */
+.disabled-select{
+	pointer-events: none;
+}
+
+.disabled-select .select-date{
+	color: var(--gray);
+}
+
+select.disabled-select{
+	color: var(--gray);
 }
