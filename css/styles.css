@@ -2,6 +2,9 @@
 
 @import url('./root.css');
 
+/* статуси */
+@import url('./user.css');
+
 /* сайдбар */
 @import url('./aside.css');
 
@@ -10,9 +13,6 @@
 
 /* кнопка редагування */
 @import url('./edit.css');
-
-/* стилізація селектів, інпутів */
-/* @import url('./jquery.formstyler.css'); */
 
 /* стилізація чекбоксів, селектів, інпутів */
 @import url('./inputs.css');

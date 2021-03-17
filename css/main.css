@@ -1,7 +1,7 @@
 /* контент */
 
 #cabinet main{    
-    padding: 5px 20px 20px 50px;
+    padding: 0 20px 20px 50px;
 }
 
 @media(max-width: 996px){
@@ -24,8 +24,14 @@
 #cabinet .block{
     border-radius: 5px;
     border: 1px solid var(--gray-light);
-    padding: 10px;
-    margin: 20px 0 40px;
+    padding: 12px 10px;
+    margin: 0 0 40px;
+}
+
+@media(max-width:996px){
+    #cabinet .block{
+        margin: 10px 0 20px;
+    }
 }
 
 /* короткий опис в 1 абзац */
@@ -35,7 +41,7 @@
 }
 
 /* підзаголовок */
-#cabinet main h2{
+.block h2{
     position: relative;
     font-size: 16px;
     font-weight: normal;
@@ -43,10 +49,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 5px 0 5px 20px;
-    margin: 0 0 20px;
+    margin: 0 0 10px;
 }
 
-#cabinet main h2::before{
+.block h2::before{
     content: '';
     position: absolute;
     top: 0;
@@ -59,19 +65,19 @@
 }
 
 /* якщо послуга підключена, то вертикальна смужка зліва стає зеленою */
-#cabinet main h2.green{
+.block h2.green{
     color: var(--black)
 }
 
-#cabinet main h2.green::before{
+.block h2.green::before{
     background: var(--green)
 }
 
 /* червона смужка */
-#cabinet main h2.red{
+.block h2.red{
     color: var(--black)
 }
-#cabinet main h2.red::before{
+.block h2.red::before{
     background: var(--red)
 }
 
@@ -337,7 +343,7 @@ ol.user-data strong{
 
 .user-confirm.active button{
     pointer-events: auto;
-    background: var(--green);
+    background: var(--blue);
     color: var(--white);
 }
 
