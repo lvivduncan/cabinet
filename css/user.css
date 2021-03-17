@@ -68,6 +68,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    font-style: normal;
 }
 
 #user-notice::before{
@@ -103,7 +104,7 @@
 }
 
 /* смужка біля іконки */
-.status-active .block h2::before{
+.status-active .notice h2::before{
     background: var(--green);
 }
 
@@ -129,7 +130,7 @@
 }
 
 /* смужка біля іконки */
-.status-disconnect .block h2::before{
+.status-disconnect .notice h2::before{
     /* background: var(--green); */
 }
 
@@ -154,7 +155,7 @@
 }
 
 /* смужка біля іконки */
-.status-blocked .block h2::before{
+.status-blocked .notice h2::before{
     background: var(--red);
 }
 
@@ -179,7 +180,7 @@
 }
 
 /* смужка біля іконки */
-.status-services .block h2::before{
+.status-services .notice h2::before{
     background: var(--gold);
 }
 
@@ -204,7 +205,7 @@
 }
 
 /* смужка біля іконки */
-.status-stoped .block h2::before{
+.status-stoped .notice h2::before{
     background: yellow;
 }
 
@@ -232,6 +233,6 @@
 }
 
 /* смужка біля іконки */
-.status-extra .block h2::before{
+.status-extra .notice h2::before{
     background: var(--blue);
 }
