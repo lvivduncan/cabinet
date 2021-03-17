@@ -4,11 +4,13 @@
 	opacity: 0;
 	margin: 10px 0 0 20px;
 }
+
 .checkbox + label {
 	position: relative;
 	padding: 0 0 0 60px;
 	cursor: pointer;
 }
+
 .checkbox + label:before {
 	content: '';
 	position: absolute;
@@ -21,6 +23,7 @@
 	box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
 	transition: .2s;
 }
+
 .checkbox + label:after {
 	content: '';
 	position: absolute;
@@ -33,17 +36,18 @@
 	box-shadow: 0 2px 5px rgba(0,0,0,.3);
 	transition: .2s;
 }
+
 .checkbox:checked + label:before {
 	background: var(--green);
 }
+
 .checkbox:checked + label:after {
 	left: 26px;
 }
+
 .checkbox:focus + label:before {
 	box-shadow: inset 0 2px 3px rgba(0,0,0,.2), 0 0 0 3px var(--yellow);
 }
-
-
 
 .radio {
 	position: absolute;
@@ -51,11 +55,13 @@
 	opacity: 0;
 	margin: 10px 0 0 7px;
 }
+
 .radio + label {
 	position: relative;
 	padding: 0 0 0 35px;
 	cursor: pointer;
 }
+
 .radio + label:before {
 	content: '';
 	position: absolute;
@@ -67,6 +73,7 @@
 	border-radius: 50%;
 	background: var(--white);
 }
+
 .radio + label:after {
 	content: '';
 	position: absolute;
@@ -80,15 +87,14 @@
 	opacity: 0;
 	transition: .2s;
 }
+
 .radio:checked + label:after {
 	opacity: 1;
 }
+
 .radio:focus + label:before {
 	box-shadow: 0 0 0 3px var(--yellow);
 }
-
-
-
 
 .inputs{
     margin: 20px;
@@ -98,8 +104,6 @@
     margin: 10px 0!important;
 }
 
-
-/* 9-3-21 */
 select {
 	display: block;
 	width: 100%;
@@ -108,9 +112,7 @@ select {
 	font-weight: 400;
 	line-height: 1.5;
 	color: var(--black);
-	/* vertical-align: middle; */
 	background-color: var(--white);
-	/* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%234a9ad5'%3E%3Cpath d='M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z'/%3E%3C/svg%3E"); */
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%234a9ad5'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	background-position: right .75rem center;
@@ -172,30 +174,27 @@ select {
 	font-style: normal;
 	display: inline-flex;
     justify-content: center;
+	background: var(--gray-light);
 }
 
 .day{
 	position: absolute;
 	z-index: -1;
 	opacity: 0;
-	margin: 10px 0 0 7px;
 }
 
 .day + label{
 	position: relative;
-	padding: 5px;
-	width: 26px;
+	width: 40px;
 	height: 26px;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 50%;
 	cursor: pointer;
 }
 
 .day:disabled + label{
 	color: var(--gray-dark);
-	background: var(--gray-light);
 	pointer-events: none;
 }
 
@@ -209,7 +208,6 @@ select {
 .lighting .day:disabled + label{
 	background: var(--green-light);
 }
-
 
 /* неактивний селект */
 .disabled-select{
