@@ -411,3 +411,25 @@ button:hover{
 .main-header span.active svg{
     fill: var(--black);
 }
+
+/* копіювати код */
+#copy-code i{
+    position: relative;
+}
+
+/* tooltip */
+#copy-code i::before{
+    content: 'Скопійовано';
+    display: none;
+    padding: 5px;
+    border-radius: 5px;
+    background: var(--gray);
+    color: var(--white);    
+}
+
+#copy-code i.active::before{
+    display: inline-block;
+    position: absolute;
+    top: -25px;
+    left: -85px;
+}
