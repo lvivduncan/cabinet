@@ -46,7 +46,6 @@
 }
 
 .checkbox:focus + label:before {
-	/* box-shadow: inset 0 2px 3px rgba(0,0,0,.2), 0 0 0 3px var(--yellow); */
 	box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
 }
 
@@ -221,4 +220,14 @@ select {
 
 select.disabled-select{
 	color: var(--gray);
+}
+
+/* відступи після цифри для "грн"*/
+#tv-value-1,
+#tv-value-2,
+#tv-value-3,
+#internet-value-1,
+#internet-value-2{
+	display: inline-block;
+	padding-right: 5px;
 }

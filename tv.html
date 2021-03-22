@@ -111,17 +111,17 @@
     
                         <li>
                             <p>Кількість каналів</p>
-                            <p id="tv-value-1">---</p>
+                            <p><span id="tv-value-1">---</span></p>
                         </li>
     
                         <li>
                             <p>Кількість пристроїв</p>
-                            <p id="tv-value-2">---</p>
+                            <p><span id="tv-value-2">---</span></p>
                         </li>
     
                         <li>
                             <p>Місячна абонплата</p>
-                            <p id="tv-value-3">0 грн/міс</p>
+                            <p><span id="tv-value-3">0</span> грн/міс</p>
                         </li>
                     </ul>
 
@@ -221,14 +221,14 @@
         });
 
         // 3. описи тарифів 
-            $('#tv-value').on('change', function(){
-                var data = $('#tv-value').val().split(',');
+        $('#tv-value').on('change', function(){
+            var data = $('#tv-value').val().split(',');
 
-                $('#tv-value-1').text(data[0]);
-                $('#tv-value-2').text(data[1]);
-                $('#tv-value-3').text(data[2]);
+            $('#tv-value-1').text(data[0]);
+            $('#tv-value-2').text(data[1]);
+            $('#tv-value-3').text(data[2]);
 
-            });
+        });
 
         // 4. fancybox
 
