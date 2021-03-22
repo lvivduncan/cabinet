@@ -249,7 +249,7 @@
             if($('#tv-devices select').val() == 'Отримати код активації'){
                 // вставляємо дані
                 $(this).parents('#tv-devices').children('ol.user-data').append(data1);
-            } else {
+            } else if($('#tv-devices select').val() == 'Отримати плейлист'){
                 // вставляємо дані
                 $(this).parents('#tv-devices').children('ol.user-data').append(data2);
             }
