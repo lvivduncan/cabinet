@@ -111,11 +111,15 @@
                     <li>
                         <p>Тип зміни</p>
                         <p>
-                            <select class="disabled-select">
-                                <option>Змінити негайно</option>
+                            <select class="disabled-select" id="internet-time-change">
                                 <option>З наступного місяця</option>
+                                <option>Змінити негайно</option>
                             </select>
                         </p>
+                    </li>
+                    <li id="internet-time-now">
+                        <p><strong>Увага! </strong> Вартість негайної зміни тарифу</p>
+                        <p>30 грн</p>
                     </li>
                 </ul>
 
@@ -162,6 +166,17 @@
             $('#internet-value-1').text(data[0]);
             $('#internet-value-2').text(data[1]);
             
+            $('.user-confirm').addClass('active');
+        });
+
+        // 2.1 час зміни тарифу
+        $('#internet-time-change').on('change', function(){
+            if($('#internet-time-change').val() == 'Змінити негайно'){
+                $('#internet-time-now').addClass('active');
+            } else {
+                $('#internet-time-now').removeClass('active');
+            }
+
             $('.user-confirm').addClass('active');
         });
 

@@ -235,7 +235,8 @@ ol.user-data strong{
 
 /* поле, яке редагується */
 .edited .edit-area input[type="text"]{
-    background: var(--yellow);
+    /* background: var(--yellow); */
+    background: var(--yellow-light);
     pointer-events: auto;
     padding-left: 5px;
 }

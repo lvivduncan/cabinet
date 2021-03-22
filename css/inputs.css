@@ -231,3 +231,12 @@ select.disabled-select{
 	display: inline-block;
 	padding-right: 5px;
 }
+
+/* блок з приміткою */
+#internet-time-now{
+	display: none;
+}
+
+#internet-time-now.active{
+	display: grid;
+}
