@@ -247,11 +247,17 @@
             ';  
 
             if($('#tv-devices select').val() == 'Отримати код активації'){
-                // вставляємо дані
+                // insert data
                 $(this).parents('#tv-devices').children('ol.user-data').append(data1);
+
+                // default value
+                $('#tv-devices select').val('Додати пристрій');
             } else if($('#tv-devices select').val() == 'Отримати плейлист'){
-                // вставляємо дані
+                // insert data
                 $(this).parents('#tv-devices').children('ol.user-data').append(data2);
+
+                // default value
+                $('#tv-devices select').val('Додати пристрій');
             }
         });
 
