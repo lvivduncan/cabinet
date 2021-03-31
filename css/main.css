@@ -124,6 +124,7 @@ ul.user-data li{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     border-top: 1px solid var(--gray-light);
+    min-height: 59px;
 }
 
 @media(max-width: 540px){
