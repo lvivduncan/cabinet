@@ -352,57 +352,11 @@
                 $(this).parents('.hidden-area').children('.user-confirm').addClass('active');
             });
 
-
             // 2.2.1 вибір дати
             $('.select-date').on('click', function(){
                 $('.select-calendar').toggleClass('active');
                 $('.calendar').toggleClass('active');
             });
-
-
-            // 2.2.2 клік на день
-            /* $('.day').on('click', function(){
-                var number = +$(this).next().text();
-                $('.select-date').text(number);
-
-                // очистка
-                $('.select-days i').each(function(){
-                    $(this).removeClass('lighting');
-                });
-
-                // підсвітка 5 наступних
-                if(number == 27){                    
-
-                    $(this).parent().next('i').addClass('lighting');
-                    $(this).parent().next('i').next('i').addClass('lighting');
-                    $(this).parent().next('i').next('i').next('i').addClass('lighting');
-                    $(this).parent().next('i').next('i').next('i').next('i').addClass('lighting');
-
-                    // + 1 число
-                    $('.select-days i').eq(0).addClass('lighting');
-
-                } else if(number == 28) {
-
-                    $(this).parent().next('i').addClass('lighting');
-                    $(this).parent().next('i').next('i').addClass('lighting');
-                    $(this).parent().next('i').next('i').next('i').addClass('lighting');
-
-                    // +1 i 2
-                    $('.select-days i').eq(0).addClass('lighting');
-                    $('.select-days i').eq(1).addClass('lighting');
-
-                } else {
-                    $(this).parent().next('i').addClass('lighting');
-                    $(this).parent().next('i').next('i').addClass('lighting');
-                    $(this).parent().next('i').next('i').next('i').addClass('lighting');
-                    $(this).parent().next('i').next('i').next('i').next('i').addClass('lighting');
-                    $(this).parent().next('i').next('i').next('i').next('i').next('i').addClass('lighting');
-                }
-
-                // якщо клікнули на день
-                $(this).parents('.hidden-area').children('.user-confirm').addClass('active');
-                
-            }); */
 
             // 3. fancybox
 
