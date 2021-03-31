@@ -149,28 +149,78 @@ select {
 	background-size: 20px 20px;
 	border: 1px solid var(--gray-light);
 	border-radius: .25rem;
-	cursor: pointer;	
+	cursor: pointer;
+	user-select: none;
 }
 
 /* блок, який з'являється */
-.two-calendars{
+.select-calendar{
 	display: none;
 	position: absolute;
-    width: 420px;
-    bottom: 100%;
-    right: 0;
+	bottom:100%;
+	left:0;
+	width: calc(100% - 10px);
+	background: var(--white);
+	border: 1px solid var(--gray-light);
+	border-radius: 5px;
+	margin-left: 10px;
+	padding: 10px;
 }
 
-.two-calendars.active{
+.select-calendar.active{
 	display: block;
 }
 
-@media(max-width:540px){
-	.two-calendars{
-		bottom: 60%;
-		width: 210px;
+@media(max-width: 540px){
+	.select-calendar.active{
+		margin: 0;
+		width: 100%;
 	}
 }
+
+/* календар */
+.calendar{
+	display: none;
+	user-select: none;
+}
+
+.calendar.active{
+	display: grid;
+	grid-template-columns: repeat(7,1fr);
+}
+
+.calendar > span{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--blue);
+	height: 32px;
+	text-align: center;
+	cursor: pointer
+}
+
+
+.calendar > span.first{
+	background: var(--blue);
+	border-radius: 3px 0 0 3px;
+	color: var(--blue-light)
+}
+
+.calendar > span.last{
+	background: var(--blue);
+	border-radius: 0 3px 3px 0;
+	color: var(--blue-light)
+}
+
+.calendar > span.highlight{
+	background: var(--blue-light);
+}
+
+/* неактивний */
+.calendar > span.disabled{
+	cursor: not-allowed;
+}
+
 
 
 /* неактивний селект */

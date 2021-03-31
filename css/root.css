@@ -5,10 +5,11 @@
 }
 
 :root{
-    --blue: #4a9ad5; /* #4c9bd5 */
+    --blue: #4a9ad5;
+    --blue-light: #ecf3f9; /* для календаря */
 
-    --gray: #a5a5a6; /* #a6a7a7 */
-    --gray-light: #eceded; /* #c4c1bf */
+    --gray: #a5a5a6;
+    --gray-light: #eceded;
     --gray-dark: #534d54;
     --text: #8a8887;
 
