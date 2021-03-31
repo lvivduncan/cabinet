@@ -258,49 +258,15 @@
                             <p>Дійсний до</p>
                             <p>10.03.2021</p>
                         </li> 
-                        <li>
+                        <li style="position: relative;">
                             <p>Оберіть день зняття абонплати</p>
                             <p class="selects disabled-select">
                                 <span class="select-date">
                                     14
                                 </span>
-                                <span class="select-days">
-                                    <i><input type="radio" name="days" id="day-1" class="day"><label for="day-1">1</label></i>
-                                    <i><input type="radio" name="days" id="day-2" class="day"><label for="day-2">2</label></i>
-                                    <i><input type="radio" name="days" id="day-3" class="day"><label for="day-3">3</label></i>
-                                    <i><input type="radio" name="days" id="day-4" class="day"><label for="day-4">4</label></i>
-                                    <i><input type="radio" name="days" id="day-5" class="day"><label for="day-5">5</label></i>
-                                    <i><input type="radio" name="days" id="day-6" class="day"><label for="day-6">6</label></i>
-                                    <i><input type="radio" name="days" id="day-7" class="day"><label for="day-7">7</label></i>
-                                    <i><input type="radio" name="days" id="day-8" class="day"><label for="day-8">8</label></i>
-                                    <i><input type="radio" name="days" id="day-9" class="day"><label for="day-9">9</label></i>
-                                    <i><input type="radio" name="days" id="day-10" class="day"><label for="day-10">10</label></i>
-                                    <i><input type="radio" name="days" id="day-11" class="day"><label for="day-11">11</label></i>
-                                    <i><input type="radio" name="days" id="day-12" class="day"><label for="day-12">12</label></i>
-                                    <i><input type="radio" name="days" id="day-13" class="day"><label for="day-13">13</label></i>
-                                    <i><input type="radio" name="days" id="day-14" class="day"><label for="day-14">14</label></i>
-                                    <i><input type="radio" name="days" id="day-15" class="day"><label for="day-15">15</label></i>
-                                    <i><input type="radio" name="days" id="day-16" class="day"><label for="day-16">16</label></i>
-                                    <i><input type="radio" name="days" id="day-17" class="day"><label for="day-17">17</label></i>
-                                    <i><input type="radio" name="days" id="day-18" class="day"><label for="day-18">18</label></i>
-                                    <i><input type="radio" name="days" id="day-19" class="day"><label for="day-19">19</label></i>
-                                    <i><input type="radio" name="days" id="day-20" class="day"><label for="day-20">20</label></i>
-                                    <i><input type="radio" name="days" id="day-21" class="day"><label for="day-21">21</label></i>
-                                    <i><input type="radio" name="days" id="day-22" class="day"><label for="day-22">22</label></i>
-                                    <i><input type="radio" name="days" id="day-23" class="day"><label for="day-23">23</label></i>
-                                    <i><input type="radio" name="days" id="day-24" class="day"><label for="day-24">24</label></i>
-                                    <i><input type="radio" name="days" id="day-25" class="day"><label for="day-25">25</label></i>
-                                    <i><input type="radio" name="days" id="day-26" class="day"><label for="day-26">26</label></i>
-                                    <i><input type="radio" name="days" id="day-27" class="day"><label for="day-27">27</label></i>
-                                    <i><input type="radio" name="days" id="day-28" class="day"><label for="day-28">28</label></i>
-
-                                    <!-- неактивні -->
-                                    <i><input type="radio" name="days" id="day-29" class="day" disabled><label for="day-29">29</label></i>
-                                    <i><input type="radio" name="days" id="day-30" class="day" disabled><label for="day-30">30</label></i>
-                                    <i><input type="radio" name="days" id="day-31" class="day" disabled><label for="day-31">31</label></i>
-                                    <!-- неактивні -->
-
-                                </span>
+                                <div class="two-calendars"></div>
+                                <!-- <span class="select-calendar">
+                                </span> -->
                             </p>
                         </li>
                         <li>
@@ -337,6 +303,7 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/pickmeup.js"></script>
 
     <script>
         (function () {
@@ -369,11 +336,29 @@
 
             // 2.2.1 вибір дати
             $('.select-date').on('click', function(){
-                $(this).next('.select-days').toggleClass('active');
+                $(this).next('.select-calendar').toggleClass('active');
+                $('.two-calendars').toggleClass('active');
             });
 
+            // calendar init
+            var plus_5_days = new Date;
+            plus_5_days.setDate(plus_5_days.getDate() + 5);
+
+            pickmeup('.two-calendars', {
+                flat      : true,
+                date      : [
+                    new Date,
+                    plus_5_days
+                ],
+                mode      : 'range',
+                calendars : 2
+            });
+
+
+
+
             // 2.2.2 клік на день
-            $('.day').on('click', function(){
+            /* $('.day').on('click', function(){
                 var number = +$(this).next().text();
                 $('.select-date').text(number);
 
@@ -414,7 +399,7 @@
                 // якщо клікнули на день
                 $(this).parents('.hidden-area').children('.user-confirm').addClass('active');
                 
-            });
+            }); */
 
             // 3. fancybox
 

@@ -17,6 +17,9 @@
 /* стилізація чекбоксів, селектів, інпутів */
 @import url('./inputs.css');
 
+/* календар */
+@import url('./pickmeup.css');
+
 /* лайтбокс */
 @import url('./jquery.fancybox.min.css');
 

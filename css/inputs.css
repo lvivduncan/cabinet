@@ -152,62 +152,26 @@ select {
 	cursor: pointer;	
 }
 
-/* "options" для .select-date */
-.select-days{
+/* блок, який з'являється */
+.two-calendars{
 	display: none;
 	position: absolute;
-	width: calc(100% - 10px);
-	bottom: calc(100% - 10px);
+    width: 420px;
+    bottom: 100%;
+    right: 0;
 }
 
-.select-days.active{
-	display: grid;
-	grid-template-columns: repeat(7,1fr);
-	grid-gap: 10px;
-	padding: 10px;
-	border: 1px solid var(--gray-light);
-	border-radius: 5px;
-	background: var(--white);
+.two-calendars.active{
+	display: block;
 }
 
-.select-days i{
-	font-style: normal;
-	display: inline-flex;
-    justify-content: center;
-	background: var(--gray-light);
+@media(max-width:540px){
+	.two-calendars{
+		bottom: 60%;
+		width: 210px;
+	}
 }
 
-.day{
-	position: absolute;
-	z-index: -1;
-	opacity: 0;
-}
-
-.day + label{
-	position: relative;
-	width: 100%;
-	height: 26px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-}
-
-.day:disabled + label{
-	color: var(--gray-dark);
-	pointer-events: none;
-}
-
-.day:checked + label{
-	color: var(--white);
-	background: var(--green);
-}
-
-/* підсвітка сусідніх днів */
-.lighting label,
-.lighting .day:disabled + label{
-	background: var(--green-light);
-}
 
 /* неактивний селект */
 .disabled-select{
