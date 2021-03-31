@@ -1,5 +1,5 @@
 .pickmeup {
-    background: var(--white);
+    background: var(--gray-light);
     border-radius: .4em;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
