@@ -218,7 +218,9 @@ select {
 
 /* неактивний */
 .calendar > span.disabled{
-	cursor: not-allowed;
+	/* cursor: not-allowed; */
+	cursor: text;
+	color: var(--gray)
 }
 
 
