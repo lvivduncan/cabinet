@@ -247,25 +247,21 @@
 
                 <div class="hidden-area">
                     <ul class="user-data">
-                        <li class="change">
-                            <p>Підключено</p>
-                            <p>
-                                <input class="checkbox" id="change-date" type="checkbox">
-                                <label for="change-date"></label>
-                            </p>
-                        </li>
                         <li>
                             <p>Дійсний до</p>
-                            <p>10.03.2021</p>
+                            <p class="old-date" data-day="2021-04-15" data-month_price="100">15.04.2021</p>
                         </li> 
                         <li style="position: relative;">
                             <p>Оберіть день зняття абонплати</p>
-                            <p class="selects disabled-select">
+                            <p class="selects new-date" data-day="2021-05-22">
                                 <span class="select-date">
-                                    14
+                                    22.05.2021
                                 </span>
                                 <span class="select-calendar">
                                     <span class="calendar">
+
+
+
                                         <span class="disabled">1</span>
                                         <span class="disabled">2</span>
                                         <span class="disabled">3</span>
@@ -298,7 +294,7 @@
                         </li>
                         <li>
                             <p>Вартість</p>
-                            <p>0 грн/міс</p>
+                            <p><span class="change-price">0</span>&nbsp;грн</p>
                         </li>    
                     </ul>
 
@@ -363,6 +359,93 @@
                 $('.select-calendar').toggleClass('active');
                 $('.calendar').toggleClass('active');
             });
+
+            {
+                const old_date = document.querySelector('.old-date');
+                const new_date = document.querySelector('.new-date');
+
+                const change_price = document.querySelector('.change-price');
+
+                const month_price = parseInt(old_date.dataset.month_price);
+                const day_price = Math.round((month_price / 28));
+
+                const new_date_span = new_date.querySelector('.select-date');
+                const new_date_calendar = new_date.querySelector('.calendar');
+
+                const [ old_y, old_m, old_d ] = old_date.dataset.day.split('-');
+
+                const old_dt = new Date(parseInt(old_y), parseInt(old_m), parseInt(old_d));
+                const base_new_dt = new Date(parseInt(old_y), parseInt(old_m)+1, parseInt(old_d));
+
+                new_date_calendar.innerHTML = '';
+
+                const updateHighlight = () => {
+
+                    let [ new_y, new_m, new_d ] = new_date.dataset.day.split('-');
+                    let new_dt = new Date(parseInt(new_y), parseInt(new_m), parseInt(new_d));
+
+                    new_date_calendar.querySelectorAll('span').forEach(span => {
+
+                        const dt = parseInt(span.dataset.dt);
+
+                        span.classList.remove('last');
+                        span.classList.remove('highlight');
+
+                        if (dt === base_new_dt.getTime())
+                            span.classList.add('first');
+                        else if (dt === new_dt.getTime())
+                        {
+                            span.classList.add('last');
+                            change_price.innerHTML = span.dataset.price;
+                        }
+                        else if (dt > base_new_dt.getTime() && dt < new_dt.getTime())
+                            span.classList.add('highlight');
+
+                    })
+
+                }
+
+                let offset = 0;
+
+                while (true)
+                {
+
+                    const dt = new Date(parseInt(old_y), parseInt(old_m) + 1, parseInt(old_d) + offset);
+
+                    const span = document.createElement('span');
+                    span.dataset.dt = dt.getTime().toString();
+                    span.dataset.day = dt.getDate().toString();
+                    span.dataset.price = (month_price + day_price * offset).toString();
+                    span.innerText = dt.getDate().toString();
+                    new_date_calendar.appendChild(span);
+
+                    updateHighlight();
+
+                    span.addEventListener('click', () => {
+
+                        const y = dt.getFullYear();
+
+                        let m = dt.getMonth(), d = dt.getDate();
+
+                        while (m.toString().length < 2) m = '0' + m;
+                        while (d.toString().length < 2) d = '0' + d;
+
+                        new_date.dataset.day = y + '-' + m + '-' + d;
+                        new_date_span.innerHTML = d + '.' + m + '.' + y;
+
+                        updateHighlight();
+
+                    });
+
+                    offset++;
+
+                    if (base_new_dt.getMonth() !== dt.getMonth() && dt.getDate() >= old_dt.getDate() - 1)
+                        break;
+                }
+
+
+
+            }
 
             // 3. fancybox
 
