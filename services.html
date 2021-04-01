@@ -253,7 +253,7 @@
                         </li> 
                         <li style="position: relative;">
                             <p>Оберіть день зняття абонплати</p>
-                            <p class="selects new-date" data-day="2021-05-22">
+                            <p class="selects new-date" data-day="2021-05-18">
                                 <span class="select-date">
                                     22.05.2021
                                 </span>
@@ -293,12 +293,16 @@
                             </p>
                         </li>
                         <li>
+                            <p>Кількість днів</p>
+                            <p>1 місяць +&nbsp;<span class="change-days"></span>&nbsp;днів</p>
+                        </li>
+                        <li>
                             <p>Вартість</p>
                             <p><span class="change-price">0</span>&nbsp;грн</p>
-                        </li>    
+                        </li>
                     </ul>
 
-                    <div class="user-confirm">
+                    <div class="user-confirm active">
                         <button data-fancybox data-src="#approuve" data-modal="true" href="javascript:;">Зберегти зміни</button>
                     </div>
                 </div>
@@ -365,6 +369,7 @@
                 const new_date = document.querySelector('.new-date');
 
                 const change_price = document.querySelector('.change-price');
+                const change_days = document.querySelector('.change-days');
 
                 const month_price = parseInt(old_date.dataset.month_price);
                 const day_price = Math.round((month_price / 28));
@@ -374,17 +379,20 @@
 
                 const [ old_y, old_m, old_d ] = old_date.dataset.day.split('-');
 
-                const old_dt = new Date(parseInt(old_y), parseInt(old_m), parseInt(old_d));
-                const base_new_dt = new Date(parseInt(old_y), parseInt(old_m)+1, parseInt(old_d));
+                const old_dt = new Date(parseInt(old_y), parseInt(old_m)-1, parseInt(old_d));
+                const base_new_dt = new Date(parseInt(old_y), parseInt(old_m), parseInt(old_d));
 
                 new_date_calendar.innerHTML = '';
 
                 const updateHighlight = () => {
 
                     let [ new_y, new_m, new_d ] = new_date.dataset.day.split('-');
-                    let new_dt = new Date(parseInt(new_y), parseInt(new_m), parseInt(new_d));
+                    let new_dt = new Date(parseInt(new_y), parseInt(new_m)-1, parseInt(new_d));
 
                     new_date_calendar.querySelectorAll('span').forEach(span => {
+
+                        if (span.classList.contains('disabled'))
+                            return;
 
                         const dt = parseInt(span.dataset.dt);
 
@@ -401,18 +409,44 @@
                         else if (dt > base_new_dt.getTime() && dt < new_dt.getTime())
                             span.classList.add('highlight');
 
-                    })
+                    });
+
+                    change_days.innerHTML = (new_date_calendar.querySelectorAll('span.highlight').length + 1).toString()
 
                 }
+
+                [ 'Пн','Вт','Ср','Чт','Пт','Сб','Нд' ].forEach(dow => {
+
+                    const span = document.createElement('span');
+                    span.innerText = dow;
+                    span.classList.add('disabled');
+                    new_date_calendar.appendChild(span);
+
+                })
 
                 let offset = 0;
 
                 while (true)
                 {
+                    const dt = new Date(parseInt(old_y), parseInt(old_m), parseInt(old_d) + offset);
 
-                    const dt = new Date(parseInt(old_y), parseInt(old_m) + 1, parseInt(old_d) + offset);
+                    console.log(dt, dt.getDay());
+
+                    if (offset === 0)
+                    {
+                        let _emp = dt.getDay() - 1;
+                        if (_emp < 0) _emp = 7 + _emp;
+
+                        for (let i = 0; i < _emp; i++)
+                        {
+                            const span = document.createElement('span');
+                            span.classList.add('disabled');
+                            new_date_calendar.appendChild(span);
+                        }
+                    }
 
                     const span = document.createElement('span');
+                    span.classList.add('day');
                     span.dataset.dt = dt.getTime().toString();
                     span.dataset.day = dt.getDate().toString();
                     span.dataset.price = (month_price + day_price * offset).toString();
@@ -425,7 +459,7 @@
 
                         const y = dt.getFullYear();
 
-                        let m = dt.getMonth(), d = dt.getDate();
+                        let m = dt.getMonth() + 1, d = dt.getDate();
 
                         while (m.toString().length < 2) m = '0' + m;
                         while (d.toString().length < 2) d = '0' + d;
