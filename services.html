@@ -364,6 +364,15 @@
                 $('.calendar').toggleClass('active');
             });
 
+            // // todo:
+            // ховаємо календар по кліку на будь-яке місце сторінки
+            $('body').on('click', function(e){
+                if(e.target.className != 'select-date' && e.target.className != 'select-calendar'){
+                    $('.select-calendar').removeClass('active');
+                    $('.calendar').removeClass('active');
+                }
+            });
+
             {
                 const old_date = document.querySelector('.old-date');
                 const new_date = document.querySelector('.new-date');
