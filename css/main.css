@@ -120,7 +120,7 @@ ul.user-data{
 
 
 /* лівий блок */
-ul.user-data li{
+.user-data li{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     border-top: 1px solid var(--gray-light);
@@ -128,16 +128,16 @@ ul.user-data li{
 }
 
 @media(max-width: 540px){
-    ul.user-data li{
+    .user-data li{
         grid-template-columns: 1fr;
     }
 }
 
-ul.user-data li:first-child{
+.user-data li:first-child{
     border: none;
 }
 
-ul.user-data li p{
+.user-data li p{
     display: flex;
     align-items: center;
     padding: 10px 0 10px 10px;
@@ -145,54 +145,27 @@ ul.user-data li p{
 }
 
 @media(max-width: 540px){
-    ul.user-data li p{
+    .user-data li p{
         padding: 10px 0;
     }
 }
 
 /* правий блок (з іконкою)*/
-ul.user-data li p:first-child{
+.user-data li p:first-child{
     color: var(--gray);
     padding: 10px 0;
 }
 
 /* у деяких шаблонах юзер-дата має бордери вгорі та низу */
-ul.user-data.borders{
+.user-data.borders{
     border-top: 1px solid var(--gray-light);
     border-bottom: 1px solid var(--gray-light);
 }
 
-ul.user-data strong{
+.user-data strong{
     color: var(--red);
 }
 
-
-
-/* опис зліва і кнопка справа */
-ol.user-data{
-    display: block;
-    margin: 10px 20px;
-}
-
-ol.user-data li{
-    color: var(--gray);
-    border-top: 1px solid var(--gray-light);
-    list-style-position: inside;
-    padding: 10px 0;
-}
-
-ol.user-data a{
-    color: var(--blue);
-    text-decoration: underline;
-}
-
-ol.user-data a:hover{
-    text-decoration: none;
-}
-
-ol.user-data strong{
-    color: var(--blue);
-}
 
 
 
@@ -437,11 +410,39 @@ button:hover{
 }
 
 /* додати пристрій */
-#add-device{
+.add-device{
     display: flex;
     justify-content: space-between;
 }
 
-#add-device a{
+.add-device a{
     color: var(--black);
+}
+
+/* блоки, які показуються після кліку */
+li.insert{
+    color: var(--gray);
+    border-top: 1px solid var(--gray-light);
+    list-style-position: inside;
+    padding: 20px 0;
+    align-items: center;
+    display: list-item;
+}
+
+ol.user-data{
+    /* display: block; */
+    /* margin: 10px 20px; */
+}
+
+li.insert a{
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+li.insert a:hover{
+    text-decoration: none;
+}
+
+li.insert strong{
+    color: var(--blue);
 }

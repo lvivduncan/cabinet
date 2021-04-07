@@ -102,9 +102,9 @@
                             <p>
                                 <select id="tv-value" class="disabled-select">
                                     <option value="---,---,---">Оберіть тариф</option>
-                                    <option value="20,2,100">Назва 1 тарифа</option>
-                                    <option value="40,3,200">Назва 2 тарифа</option>
-                                    <option value="60,4,300">Назва 3 тарифа</option>
+                                    <option value="20,3,100">Назва 1 тарифа</option>
+                                    <option value="40,4,200">Назва 2 тарифа</option>
+                                    <option value="60,5,300">Назва 3 тарифа</option>
                                 </select>
                             </p>
                         </li>
@@ -134,19 +134,46 @@
             </div>
 
             <div class="block">
-                <div class="description">Мої пристрої</div>
+                <h2 class="collapse">
+                    <span>
+                        <svg fill="currentColor" viewBox="0 0 16 16"><path d="M7.5 1v7h1V1h-1z"/><path d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"/></svg>
+                        Мої пристрої
+                    </span>
+                </h2>
 
-                <div id="tv-devices">
-                    <ol class="user-data"></ol>
-
-                    <ul class="user-data">
+                <div id="tv-devices" class="hidden-area">
+                    <ol class="user-data">
                         <li>
                             <p>Новий пристрій</p>
-                            <p id="add-device">
+                            <p class="add-device">
                                 <a href="">Отримати код активації</a> <a href="">Отримати плейлист</a>
                             </p>
                         </li>
-                    </ul>
+                        <li>
+                            <p>Новий пристрій</p>
+                            <p class="add-device">
+                                <a href="">Отримати код активації</a> <a href="">Отримати плейлист</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Новий пристрій</p>
+                            <p class="add-device">
+                                <a href="">Отримати код активації</a> <a href="">Отримати плейлист</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Новий пристрій</p>
+                            <p class="add-device">
+                                <a href="">Отримати код активації</a> <a href="">Отримати плейлист</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Новий пристрій</p>
+                            <p class="add-device">
+                                <a href="">Отримати код активації</a> <a href="">Отримати плейлист</a>
+                            </p>
+                        </li>
+                    </ol>
                 </div>
             </div>
 
@@ -202,11 +229,27 @@
         $('#tv-value').on('change', function(){
             var data = $('#tv-value').val().split(',');
 
+            var devices = data[1];
+
             $('#tv-value-1').text(data[0]);
-            $('#tv-value-2').text(data[1]);
+            $('#tv-value-2').text(devices);
             $('#tv-value-3').text(data[2]);
 
             $('.user-confirm').addClass('active');
+
+            var divicesLi = $('#tv-devices .user-data li');
+
+            divicesLi.each(function() {
+                this.style.display = '';
+            });
+            
+            if(+devices === 3){
+                divicesLi[3].style.display = 'none';
+                divicesLi[4].style.display = 'none';
+            } else if(+devices === 4){
+                divicesLi[4].style.display = 'none';
+            }
+
         });
 
         // 4. fancybox
@@ -226,31 +269,48 @@
             // todo: remove fancybox 
         });
 
+        // global id
+        var parent = null;
+
         // 7. додаємо прилад
-        $('#add-device a').on('click', function(e){
+        $('#tv-devices a').on('click', function(e){
             e.preventDefault();
 
             // приклад даних
-            var data1 = '\
-                <li>\
+            var code = '\
+                <li class="insert">\
+                    <span>Код активації <strong>ABC132</strong> для застосунку Omega-TV </span>\
+                    <span class="icon-on-the-right delete" data-fancybox="" data-src="#delete-item" data-modal="true" href="javascript:;"></span>\
+                </li>\
+            ';
+            var playlist = '\
+                <li class="insert">\
                     <a href="">Завантажити плейлист</a>\
                     <span class="icon-on-the-right delete" data-fancybox="" data-src="#delete-item" data-modal="true" href="javascript:;"></span>\
                 </li>\
             ';
-            var data2 = '\
-                <li>\
-                    <span>Код активації <strong>fg434gf</strong> для застосунку Omega-TV </span>\
-                    <span class="icon-on-the-right delete" data-fancybox="" data-src="#delete-item" data-modal="true" href="javascript:;"></span>\
-                </li>\
-            ';
+
+
+            // test element from fancybox
+            $('body').delegate('#code-generate','click', function(e){
+                e.preventDefault();
+
+                parent.replaceWith(code);
+
+                $.fancybox.close();
+            });
+
 
             if(e.target.textContent == 'Отримати код активації'){
+                $.fancybox.open('<p>Використайте цей код якось<br /><a href="" id="code-generate">ABC132</a></br>');
 
-                $(this).parents('#tv-devices').children('ol.user-data').append(data1);
+                parent = $(this).parents('li');
+            } 
 
-            } else if(e.target.textContent == 'Отримати плейлист'){
+            if(e.target.textContent == 'Отримати плейлист'){
                 
-                $(this).parents('#tv-devices').children('ol.user-data').append(data2);
+                $(this).parents('li').replaceWith(playlist);
+
             }
 
         });
