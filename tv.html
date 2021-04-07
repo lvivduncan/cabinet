@@ -143,37 +143,19 @@
 
                 <div id="tv-devices" class="hidden-area">
                     <ol class="user-data">
-                        <li>
-                            <p>Новий пристрій</p>
-                            <p class="add-device">
-                                <a href="">Отримати код активації</a> <a href="">Отримати плейлист</a>
-                            </p>
-                        </li>
-                        <li>
-                            <p>Новий пристрій</p>
-                            <p class="add-device">
-                                <a href="">Отримати код активації</a> <a href="">Отримати плейлист</a>
-                            </p>
-                        </li>
-                        <li>
-                            <p>Новий пристрій</p>
-                            <p class="add-device">
-                                <a href="">Отримати код активації</a> <a href="">Отримати плейлист</a>
-                            </p>
-                        </li>
-                        <li>
-                            <p>Новий пристрій</p>
-                            <p class="add-device">
-                                <a href="">Отримати код активації</a> <a href="">Отримати плейлист</a>
-                            </p>
-                        </li>
-                        <li>
-                            <p>Новий пристрій</p>
-                            <p class="add-device">
-                                <a href="">Отримати код активації</a> <a href="">Отримати плейлист</a>
-                            </p>
-                        </li>
+                        <li><p>Новий пристрій</p></li>
+                        <li><p>Новий пристрій</p></li>
+                        <li><p>Новий пристрій</p></li>
+                        <li><p>Новий пристрій</p></li>
+                        <li><p>Новий пристрій</p></li>
                     </ol>
+
+                    <ul class="user-data">
+                        <li id="add-device">
+                            <p><button id="add-code">Отримати код активації</button></p>
+                            <p><button id="add-playlist">Отримати плейлист</button></p>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
@@ -225,6 +207,9 @@
             }
         });
 
+        // кількість полів (min - 3, max - 5)
+        var devices = 5;
+
         // 3. описи тарифів 
         $('#tv-value').on('change', function(){
             var data = $('#tv-value').val().split(',');
@@ -270,26 +255,37 @@
         });
 
         // global id
-        var parent = null;
+        // var parent = null;
 
+
+
+        // кількість кліків
+        var click = 0;
+
+        // приклад даних
+        var code = '<li class="insert"><span>Код активації <strong>ABC132</strong> для застосунку Omega-TV </span><span class="icon-on-the-right delete" data-fancybox="" data-src="#delete-item" data-modal="true" href="javascript:;"></span></li>';
+        var playlist = '<li class="insert"><a href="">Завантажити плейлист</a><span class="icon-on-the-right delete" data-fancybox="" data-src="#delete-item" data-modal="true" href="javascript:;"></span></li>';
+
+        $('#add-code').on('click', function(){
+
+            if(click < devices){
+                $($('#tv-devices ol.user-data li')[click]).replaceWith(code);
+                click++;
+                console.log(click)
+            }
+
+        });
+
+        $('#add-playlist').on('click', function(){
+            $($('#tv-devices ol.user-data li')[click]).replaceWith(playlist);
+                click++;
+                console.log(click)
+        });
+
+/*
         // 7. додаємо прилад
         $('#tv-devices a').on('click', function(e){
             e.preventDefault();
-
-            // приклад даних
-            var code = '\
-                <li class="insert">\
-                    <span>Код активації <strong>ABC132</strong> для застосунку Omega-TV </span>\
-                    <span class="icon-on-the-right delete" data-fancybox="" data-src="#delete-item" data-modal="true" href="javascript:;"></span>\
-                </li>\
-            ';
-            var playlist = '\
-                <li class="insert">\
-                    <a href="">Завантажити плейлист</a>\
-                    <span class="icon-on-the-right delete" data-fancybox="" data-src="#delete-item" data-modal="true" href="javascript:;"></span>\
-                </li>\
-            ';
-
 
             // test element from fancybox
             $('body').delegate('#code-generate','click', function(e){
@@ -299,7 +295,6 @@
 
                 $.fancybox.close();
             });
-
 
             if(e.target.textContent == 'Отримати код активації'){
                 $.fancybox.open('<p>Використайте цей код якось<br /><a href="" id="code-generate">ABC132</a></br>');
@@ -314,6 +309,7 @@
             }
 
         });
+*/
 
     })();
     </script>

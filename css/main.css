@@ -410,13 +410,23 @@ button:hover{
 }
 
 /* додати пристрій */
-.add-device{
+/* .add-device{
     display: flex;
     justify-content: space-between;
 }
 
 .add-device a{
     color: var(--black);
+} */
+
+#add-device{
+    /* display: flex;
+    justify-content: space-between;
+    gap: 10px; */
+}
+
+#add-device button{
+    margin: 0;
 }
 
 /* блоки, які показуються після кліку */
@@ -430,8 +440,7 @@ li.insert{
 }
 
 ol.user-data{
-    /* display: block; */
-    /* margin: 10px 20px; */
+    margin: 10px 20px;
 }
 
 li.insert a{
