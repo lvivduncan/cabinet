@@ -435,3 +435,13 @@ button:hover{
     top: -25px;
     left: -85px;
 }
+
+/* додати пристрій */
+#add-device{
+    display: flex;
+    justify-content: space-between;
+}
+
+#add-device a{
+    color: var(--black);
+}

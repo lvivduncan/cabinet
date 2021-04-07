@@ -129,30 +129,27 @@
                         <button data-fancybox="" data-src="#approuve" data-modal="true" href="javascript:;">Зберегти зміни</button>
                     </div>
 
-                    <div class="description">Мої пристрої</div>
-
-                    <div id="tv-devices">
-                        <ul class="user-data">
-                            <li>
-                                <p>Новий пристрій</p>
-                                <p>
-                                    <select>
-                                        <option>Додати пристрій</option>
-                                        <option>Отримати код активації</option>
-                                        <option>Отримати плейлист</option>
-                                    </select>
-                                </p>
-                            </li>
-                        </ul>
-
-                        <ol class="user-data"></ol>
-                    </div>
-
                 </div>
-                <!-- #hidden-area -->
-
+                <!-- .hidden-area -->
             </div>
-            
+
+            <div class="block">
+                <div class="description">Мої пристрої</div>
+
+                <div id="tv-devices">
+                    <ol class="user-data"></ol>
+
+                    <ul class="user-data">
+                        <li>
+                            <p>Новий пристрій</p>
+                            <p id="add-device">
+                                <a href="">Отримати код активації</a> <a href="">Отримати плейлист</a>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </main>
 
     </div>
@@ -230,9 +227,10 @@
         });
 
         // 7. додаємо прилад
-        $('#tv-devices select').on('change', function(){
+        $('#add-device a').on('click', function(e){
+            e.preventDefault();
 
-            // приклад
+            // приклад даних
             var data1 = '\
                 <li>\
                     <a href="">Завантажити плейлист</a>\
@@ -244,21 +242,17 @@
                     <span>Код активації <strong>fg434gf</strong> для застосунку Omega-TV </span>\
                     <span class="icon-on-the-right delete" data-fancybox="" data-src="#delete-item" data-modal="true" href="javascript:;"></span>\
                 </li>\
-            ';  
+            ';
 
-            if($('#tv-devices select').val() == 'Отримати код активації'){
-                // insert data
+            if(e.target.textContent == 'Отримати код активації'){
+
                 $(this).parents('#tv-devices').children('ol.user-data').append(data1);
 
-                // default value
-                $('#tv-devices select').val('Додати пристрій');
-            } else if($('#tv-devices select').val() == 'Отримати плейлист'){
-                // insert data
+            } else if(e.target.textContent == 'Отримати плейлист'){
+                
                 $(this).parents('#tv-devices').children('ol.user-data').append(data2);
-
-                // default value
-                $('#tv-devices select').val('Додати пристрій');
             }
+
         });
 
     })();
