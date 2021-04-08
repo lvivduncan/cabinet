@@ -409,24 +409,17 @@ button:hover{
     left: -85px;
 }
 
-/* додати пристрій */
-/* .add-device{
-    display: flex;
-    justify-content: space-between;
-}
-
-.add-device a{
-    color: var(--black);
-} */
-
-#add-device{
-    /* display: flex;
-    justify-content: space-between;
-    gap: 10px; */
-}
-
 #add-device button{
     margin: 0;
+    background: var(--gray-light);
+    color: var(--black);
+    pointer-events: none;
+}
+
+#add-device.active button{
+    background: var(--blue);
+    color: var(--white);
+    pointer-events: all;
 }
 
 /* блоки, які показуються після кліку */

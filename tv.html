@@ -142,16 +142,10 @@
                 </h2>
 
                 <div id="tv-devices" class="hidden-area">
-                    <ol class="user-data">
-                        <li><p>Новий пристрій</p></li>
-                        <li><p>Новий пристрій</p></li>
-                        <li><p>Новий пристрій</p></li>
-                        <li><p>Новий пристрій</p></li>
-                        <li><p>Новий пристрій</p></li>
-                    </ol>
+                    <ol class="user-data"></ol>
 
                     <ul class="user-data">
-                        <li id="add-device">
+                        <li id="add-device" class="active">
                             <p><button id="add-code">Отримати код активації</button></p>
                             <p><button id="add-playlist">Отримати плейлист</button></p>
                         </li>
@@ -184,135 +178,7 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
-
-    <script>
-    (function () {
-
-        // 1. кнопка редагування сторінки
-        $('.collapse').on('click', function () {
-            $(this).toggleClass('collapsed');
-
-            $(this).siblings('.hidden-area').fadeToggle(100);
-        });
-
-        // 2. якщо були зміни у полях -- кнопка стає активною
-        $('#checkbox').on('click', function () {
-            $('.user-confirm').addClass('active');
-
-            // перевірка чи активна послуга (для активації полів)
-            if($(this).prop('checked')){
-                $(this).parents('.user-data').find('select').removeClass('disabled-select');
-            } else {
-                $(this).parents('.user-data').find('select').addClass('disabled-select');
-            }
-        });
-
-        // кількість полів (min - 3, max - 5)
-        var devices = 5;
-
-        // 3. описи тарифів 
-        $('#tv-value').on('change', function(){
-            var data = $('#tv-value').val().split(',');
-
-            var devices = data[1];
-
-            $('#tv-value-1').text(data[0]);
-            $('#tv-value-2').text(devices);
-            $('#tv-value-3').text(data[2]);
-
-            $('.user-confirm').addClass('active');
-
-            var divicesLi = $('#tv-devices .user-data li');
-
-            divicesLi.each(function() {
-                this.style.display = '';
-            });
-            
-            if(+devices === 3){
-                divicesLi[3].style.display = 'none';
-                divicesLi[4].style.display = 'none';
-            } else if(+devices === 4){
-                divicesLi[4].style.display = 'none';
-            }
-
-        });
-
-        // 4. fancybox
-
-        // 5. підтвердження
-        $('#approuve input[type="password"]').on('input', function () {
-            $('#approuve button').addClass('active');
-        });
-
-        // 6. показати блок пристроїв після збереження тарифу
-        $('#approuve button').on('click', function(){
-            $('#tv-devices').addClass('active');
-
-            // деактивую кнопку "зберегти зміни"
-            $('.user-confirm').removeClass('active');
-
-            // todo: remove fancybox 
-        });
-
-        // global id
-        // var parent = null;
-
-
-
-        // кількість кліків
-        var click = 0;
-
-        // приклад даних
-        var code = '<li class="insert"><span>Код активації <strong>ABC132</strong> для застосунку Omega-TV </span><span class="icon-on-the-right delete" data-fancybox="" data-src="#delete-item" data-modal="true" href="javascript:;"></span></li>';
-        var playlist = '<li class="insert"><a href="">Завантажити плейлист</a><span class="icon-on-the-right delete" data-fancybox="" data-src="#delete-item" data-modal="true" href="javascript:;"></span></li>';
-
-        $('#add-code').on('click', function(){
-
-            if(click < devices){
-                $($('#tv-devices ol.user-data li')[click]).replaceWith(code);
-                click++;
-                console.log(click)
-            }
-
-        });
-
-        $('#add-playlist').on('click', function(){
-            $($('#tv-devices ol.user-data li')[click]).replaceWith(playlist);
-                click++;
-                console.log(click)
-        });
-
-/*
-        // 7. додаємо прилад
-        $('#tv-devices a').on('click', function(e){
-            e.preventDefault();
-
-            // test element from fancybox
-            $('body').delegate('#code-generate','click', function(e){
-                e.preventDefault();
-
-                parent.replaceWith(code);
-
-                $.fancybox.close();
-            });
-
-            if(e.target.textContent == 'Отримати код активації'){
-                $.fancybox.open('<p>Використайте цей код якось<br /><a href="" id="code-generate">ABC132</a></br>');
-
-                parent = $(this).parents('li');
-            } 
-
-            if(e.target.textContent == 'Отримати плейлист'){
-                
-                $(this).parents('li').replaceWith(playlist);
-
-            }
-
-        });
-*/
-
-    })();
-    </script>
+    <script src="js/tv.js"></script>
 
 </body>
 </html>
