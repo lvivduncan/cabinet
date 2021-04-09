@@ -37,15 +37,31 @@
 
     // проміжний масив, в який кладуться дані для рендерингу
     var data = [];
+    // for (let i = 0; i < devices; i++) {
+    //     data.push(origin);
+    // }
+    
+    // todo: кладемо об'єкти з id та даними
     for (let i = 0; i < devices; i++) {
-        data.push(origin);
+        data.push({
+            id:i,
+            line:origin
+        });
     }
-
-    console.log(data)
     
     // функція оновлення DOM (відмальовує масив)
     function render(){
-        $('#tv-devices ol.user-data').html(data);
+        // $('#tv-devices ol.user-data').html(data);
+
+        var renderData = '';
+
+        for (let i = 0; i < data.length; i++) {
+            
+            renderData += data[i].line;
+            
+        }
+
+        $('#tv-devices ol.user-data').html(renderData);
     }
 
     // 3.1 кількість полів по дефолту (для тесту поклав 5)
@@ -55,6 +71,7 @@
     $('#tv-value').on('change', function(){
         var data = $('#tv-value').val().split(',');
 
+        // міняємо кількість полів
         devices = data[1];
 
         $('#tv-value-1').text(data[0]);
@@ -90,15 +107,21 @@
 
         if(click-1 != devices){
             
-            // оновлення масиву (видаляємо 1 елемент і додаємо в кінець)
+/* 
+            // оновлення масиву (видаляємо 1 li-елемент і додаємо в кінець li-заглушку)
             data.unshift('<li class="insert">'+ element +'<span class="icon-on-the-right delete" data-fancybox="" data-src="#delete-item" data-modal="true" href="javascript:;" data-id="' + (click-1) + '"></span></li>');
 
             data.pop();
+*/
 
-            // var insert = '<li class="insert">'+ element +'<span class="icon-on-the-right delete" data-fancybox data-src="#delete-item" data-modal="true" href="javascript:;" data-id="' + (click-1) + '"></span></li>'
+            // оновлення масиву з об'єктами (видаляємо 1 li-елемент і додаємо у кінець li-заглушку)
+            var insert = '<li class="insert">'+ element +'<span class="icon-on-the-right delete" data-fancybox data-src="#delete-item" data-modal="true" href="javascript:;" data-id="' + (click-1) + '"></span></li>'
 
-            // data.unshift({click, insert});
-            // data.pop();
+            data.unshift({
+                id:click, 
+                line:insert
+            });
+            data.pop();
 
         } else {
             click = devices;
@@ -126,12 +149,21 @@
     $('#tv-devices ol.user-data').on('click', function(e){
         click--;
         
+        // якщо клікнули саме на кнопку видалення
         if(e.target.classList.contains('delete')){
             // номер поля
             var attr = e.target.getAttribute("data-id");
 
             data.splice(attr,1); // видалити аттр - 1 раз
-            data.push(origin); // вставити в кінець заглушку
+            // todo: видалити той об'єкт, в якого айді співпала
+            // ................................................
+
+
+            // data.push(origin); // вставити в кінець заглушку
+            data.push({
+                id:click,
+                line:origin
+            }); // вставити в кінець заглушку
 
             // вмикаємо батони
             if(click != devices) {
