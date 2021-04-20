@@ -1,5 +1,4 @@
 /* контент */
-
 #cabinet main{    
     padding: 0 20px 20px 50px;
 }
@@ -10,15 +9,12 @@
     }
 }
 
-
 /* заголовок */
 #cabinet main h1{
     margin: 0 0 20px;
     font-size: 18px;
     font-weight: normal;
 }
-
-
 
 /* блок з контуром */
 #cabinet .block{
@@ -87,9 +83,6 @@
     background: var(--red)
 }
 
-
-
-
 #cabinet main h2 svg{
     width: 22px;
     height: 22px;
@@ -106,8 +99,6 @@
     margin-right: 10px;
 }
 
-
-
 /* абзацний відступ */
 #cabinet main p{
     margin: 20px 0;
@@ -115,15 +106,11 @@
     align-items: center;
 }
 
-
-
-
 /* описи ліво/право */
 ul.user-data{
     display: block;
     margin: 10px 20px;
 }
-
 
 /* лівий блок */
 .user-data li{
@@ -172,9 +159,6 @@ ul.user-data{
     color: var(--red);
 }
 
-
-
-
 /* кнопка видалення */
 .user-data .icon-on-the-right{
     float: right;
@@ -189,8 +173,6 @@ ul.user-data{
     fill: var(--blue);
 }
 
-
-
 /* поле для вставки коду від друга */
 .user-data input[type="text"]{
     width: 100%;
@@ -199,10 +181,6 @@ ul.user-data{
     border-radius: 5px;
     outline: none;
 }
-
-
-
-
 
 /* поля, які редагуються */
 .edit-area{}
@@ -220,8 +198,6 @@ ul.user-data{
     pointer-events: auto;
     padding-left: 5px;
 }
-
-
 
 /* щоб кнопка не перекидилася на новий рядок */
 @media (max-width: 540px){
@@ -256,9 +232,6 @@ ul.user-data{
     cursor: pointer;
 }
 
-
-
-
 /* поле зі сумою для поповнення */
 #sum{    
     padding: 5px;
@@ -267,8 +240,6 @@ ul.user-data{
     outline: none;
     width: 70px;
     margin: 0 10px 0 0;
-
-
 }
 
 /* ховаємо стрілочки */
@@ -278,11 +249,6 @@ ul.user-data{
     -webkit-appearance: none;
     appearance: none;    
 }
-
-
-
-
-
 
 /* Кнопка підтвердження (del) */
 #user-confirm{
@@ -309,11 +275,8 @@ ul.user-data{
 }
 /* Кнопка підтвердження (del) */
 
-
 /* Кнопка підтвердження (має бути у кожного блоку своя) */
-.user-confirm{
-    
-}
+.user-confirm{}
 
 /* button по дефолту неактивний */
 .user-confirm button{
@@ -327,14 +290,6 @@ ul.user-data{
     background: var(--blue);
     color: var(--white);
 }
-
-
-
-
-
-
-
-
 
 button{
     padding: 8px;
@@ -354,10 +309,6 @@ button{
 button:hover{
     background: var(--green);
 }
-
-
-
-
 
 /* header message */
 /* дві кнопки перемикання чекбоксів */
