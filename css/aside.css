@@ -5,7 +5,7 @@
     padding: 15px 0;
     border-radius: 5px;
     border: 1px solid var(--gray-light);
-    background: var(--white);
+    background: var(--white-light);
     box-shadow: 
         0 3px 1px -2px rgb(159 193 212 / 30%), 
         0 2px 2px 0 rgb(159 193 212 / 24%), 
@@ -21,6 +21,7 @@
 /* іконка зліва */
 .aside-icon{
     padding: 10px;
+    margin: 0;
     text-align: center;
     position: relative;
 }
