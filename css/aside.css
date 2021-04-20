@@ -2,19 +2,21 @@
 
 /* ліве меню */
 #cabinet aside{
-    border-right: 1px solid var(--gray-light);
+    padding: 15px 0;
+    border-radius: 5px;
+    border: 1px solid var(--gray-light);
+    background: var(--white);
+    box-shadow: 
+        0 3px 1px -2px rgb(159 193 212 / 30%), 
+        0 2px 2px 0 rgb(159 193 212 / 24%), 
+        0 1px 5px 0 rgb(159 193 212 / 22%);
 }
-
 
 @media(max-width: 996px){
     #cabinet aside{
         display: none;
     }
 }
-
-
-
-
 
 /* іконка зліва */
 .aside-icon{
@@ -29,27 +31,6 @@
     fill: var(--black);
 }
 
-/* до іконки можуть бути додані міні-іконки */
-/* .aside-icon .status{
-    position: absolute;
-    bottom: 7px;
-    right: 7px;
-    z-index: 1;
-
-    background: var(--white);
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-}
-
-.aside-icon .status svg{
-    width: 16px;
-    height: 16px;
-} */
-
-
-
-
 /* колір іконок */
 .aside-icon .status.red svg{
     fill: var(--red)
@@ -63,14 +44,9 @@
     fill: var(--black)
 }
 
-
-
-
-
-
 /* синя плашка */
 #sticked{
-    margin: 20px 0;
+    margin: 20px -3px;
     padding: 10px 20px;
     background: var(--blue);
     color: var(--white);
@@ -78,6 +54,9 @@
     grid-template-columns: 50px 1fr;
     align-items: center;
     text-decoration: none;
+    box-shadow: 
+        0 2px 1px rgb(0 0 0 / 13%), 
+        0 -2px 1px rgb(0 0 0 / 13%);
 }
 
 #sticked svg{
@@ -85,8 +64,6 @@
     width: 26px;
     height: 26px;
 }
-
-
 
 /* меню */
 #cabinet aside ul,
@@ -112,8 +89,6 @@
     background: var(--gray-light);
     border-radius: 5px;
 }
-
-
 
 #cabinet aside li span{
     position: relative;

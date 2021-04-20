@@ -3,7 +3,7 @@
 
 /* логін, баланс, дата */
 #user{
-    margin: 0 10px;
+    margin: 0 15px;
     padding: 10px;
     border-radius: 5px;
     display: grid;
@@ -12,13 +12,12 @@
     text-decoration: none;
 }
 
-#user.active{
-    background: var(--gray-light);
+#user{
+    transition: .1s;
 }
 
-#user a{
-    color: var(--green);
-    font-weight: 800;
+#user:hover{
+    background: var(--gray-light);
 }
 
 /* іконка */
