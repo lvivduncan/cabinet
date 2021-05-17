@@ -291,6 +291,10 @@ ul.user-data{
     color: var(--white);
 }
 
+.user-confirm.active button:hover{    
+    background: var(--cyan-dark);
+}
+
 button{
     padding: 8px;
     text-align: center;
@@ -366,18 +370,93 @@ button:hover{
     left: -85px;
 }
 
+#add-device{
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #add-device button{
     margin: 0;
     background: var(--gray-light);
     color: var(--black);
     pointer-events: none;
+    width: 30px;
+    height: 30px;
 }
 
 #add-device.active button{
     background: var(--blue);
     color: var(--white);
     pointer-events: all;
+    font-weight: 900;
 }
+
+
+/* модальне вікно */
+#modal{
+    width: 300px;
+    min-height: 120px;
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+    z-index: 3;
+    background: var(--white);
+    border-radius: 10px;
+    padding: 30px 10px 10px;
+    display: none;
+    text-align: center;
+}
+
+#modal.active{
+    display: block;
+}
+
+#modal p{
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#modal b{
+    display: block;
+    font-size: 26px;
+    flex: 0 1 100%;
+    color: var(--green)
+}
+
+
+/* підкладка під модальне вікно*/
+#modal-wrapper{
+    background: rgba(0,0,0, .7);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#modal-wrapper::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 16 16'%3E%3Cpath d='M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+body.modal-hidden{
+    overflow: hidden;
+    padding-right: 6px;
+}
+
+
+
 
 /* блоки, які показуються після кліку */
 li.insert{

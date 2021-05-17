@@ -51,7 +51,7 @@
     margin: 20px -3px;
     padding: 10px 20px;
     background: var(--blue);
-    color: var(--white);
+    color: var(--white-light);
     display: grid;
     grid-template-columns: 50px 1fr;
     align-items: center;
@@ -59,10 +59,15 @@
     box-shadow: 
         0 2px 1px rgb(0 0 0 / 13%), 
         0 -2px 1px rgb(0 0 0 / 13%);
+    transition: .5s;
+}
+
+#sticked:hover{
+    background: var(--cyan-dark);
 }
 
 #sticked svg{
-    fill: var(--white);
+    fill: var(--white-light);
     width: 26px;
     height: 26px;
 }

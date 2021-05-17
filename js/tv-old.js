@@ -19,39 +19,51 @@
         }
     });
 
+    // кількість полів (min - 3, max - 5)
+    var devices = 5;
 
-    {
-        const button = document.querySelector('#add-device button');
-        const modalWindow = document.getElementById('modal');
+    // кількість кліків
+    var click = 0;
+
+    // дані, які вставляються по дефолту в <ol class="user-data">
+    // початковий блок (також вставляється після видалення пристрою)
+    var origin = '<li><p>Новий пристрій</p></li>';
+
+    // приклад даних
+    var code = '<span>Код активації <strong>ABC132</strong> для застосунку Omega-TV </span>';
+
+    // приклад даних
+    var playlist = '<a href="">Завантажити плейлист</a>';
+
+    // проміжний масив, в який кладуться дані для рендерингу
+    var data = [];
     
-        modalWindow.className = 'hide';
-    
-        // create modal window wrapper
-        const modalWrapper = document.createElement('div');
-        modalWrapper.setAttribute('id', 'modal-wrapper');
-        
-        button.addEventListener('click', () => {
-            
-            // add modal
-            document.body.className = 'modal-hidden';
-            document.body.append(modalWrapper);
-    
-            // show mobile basket
-            modalWindow.className = 'active';
-            
+    // todo: кладемо об'єкти з id та даними
+    for (let i = 0; i < devices; i++) {
+        data.push({
+            id:i,
+            line:origin
         });
+    }
     
-        modalWrapper.addEventListener('click', e => {
+
+
+
+
     
-            if(e.target.id == 'modal-wrapper'){
-    
-                // clear
-                document.body.className = '';
-                modalWrapper.remove();
-                modalWindow.className = '';
-    
-            }
-        });
+    // функція оновлення DOM (відмальовує масив)
+    function render(){
+        // $('#tv-devices ol.user-data').html(data);
+
+        var renderData = '';
+
+        for (let i = 0; i < data.length; i++) {
+            
+            renderData += data[i].line;
+            
+        }
+
+        $('#tv-devices ol.user-data').html(renderData);
     }
 
 
@@ -60,8 +72,9 @@
 
 
 
+
     // 3.1 кількість полів по дефолту (для тесту поклав 5)
-    // render();
+    render();
 
     // 3.2 описи тарифів 
     $('#tv-value').on('change', function(){
@@ -76,7 +89,7 @@
 
         $('.user-confirm').addClass('active');
 
-        // render();
+        render();
 
     });
 
