@@ -20,11 +20,12 @@
     });
 
 
+    // add new device
     {
         const button = document.querySelector('#add-device button');
         const modalWindow = document.getElementById('modal');
     
-        modalWindow.className = 'hide';
+        modalWindow.classList.add('hide');
     
         // create modal window wrapper
         const modalWrapper = document.createElement('div');
@@ -37,31 +38,33 @@
             document.body.append(modalWrapper);
     
             // show mobile basket
-            modalWindow.className = 'active';
+            modalWindow.classList.add('active');
             
         });
     
-        modalWrapper.addEventListener('click', e => {
+        // click close
+        modalWrapper.addEventListener('click', () => {
     
-            if(e.target.id == 'modal-wrapper'){
-    
+            // clear
+            document.body.className = '';
+            modalWrapper.remove();
+            modalWindow.classList.remove('active');    
+            
+        });
+        
+        // esc button
+        document.addEventListener('keydown', e => {
+            if(e.code == 'Escape' || e.key == 'Escape'){
+                
                 // clear
                 document.body.className = '';
                 modalWrapper.remove();
-                modalWindow.className = '';
-    
+                modalWindow.classList.remove('active');    
             }
         });
     }
 
 
-
-
-
-
-
-    // 3.1 кількість полів по дефолту (для тесту поклав 5)
-    // render();
 
     // 3.2 описи тарифів 
     $('#tv-value').on('change', function(){
@@ -80,6 +83,8 @@
 
     });
 
+
+/* 
     // 4. fancybox
 
     // 5. підтвердження
@@ -103,13 +108,6 @@
 
         if(click-1 != devices){
             
-/* 
-            // оновлення масиву (видаляємо 1 li-елемент і додаємо в кінець li-заглушку)
-            data.unshift('<li class="insert">'+ element +'<span class="icon-on-the-right delete" data-fancybox="" data-src="#delete-item" data-modal="true" href="javascript:;" data-id="' + (click-1) + '"></span></li>');
-
-            data.pop();
-*/
-
             // оновлення масиву з об'єктами (видаляємо 1 li-елемент і додаємо у кінець li-заглушку)
             var insert = '<li class="insert">'+ element +'<span class="icon-on-the-right delete" data-fancybox data-src="#delete-item" data-modal="true" href="javascript:;" data-id="' + (click-1) + '"></span></li>'
 
@@ -170,7 +168,7 @@
         }
         render();
 
-    });
+    }); */
 
 
 })();
