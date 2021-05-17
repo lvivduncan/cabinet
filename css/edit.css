@@ -41,6 +41,10 @@
     display: none;
 }
 
+.hidden-area.show{
+    display: block!important;
+}
+
 /* неактивний блок */
 .disabled-area{
     pointer-events: none;
