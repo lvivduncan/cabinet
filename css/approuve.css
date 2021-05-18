@@ -5,7 +5,7 @@
     background: var(--black);
     color: var(--white);
     border-radius: 5px;
-    padding: 10px 15px;
+    padding: 20px 10px 15px;
     max-width: 300px;
     text-align: center;
 
@@ -26,16 +26,17 @@
 }
 
 .approuve p{
-    margin: 0;
+    margin: 20px 0;
 }
 
-/* верхній текст */
-p.approuve-header{
-    padding-right: 35px;
-    margin-bottom: 10px;
+.approuve b{
+    color: var(--gold);
 }
 
 .approuve strong{
+    display: block;
+    font-size: 26px;
+    flex: 0 1 100%;
     color: var(--gold);
 }
 
@@ -74,13 +75,6 @@ p.approuve-header{
 .approuve p{
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.approuve b{
-    display: block;
-    font-size: 26px;
-    flex: 0 1 100%;
-    color: var(--green)
 }
 
 #modal button{

@@ -370,21 +370,20 @@ button:hover{
     left: -85px;
 }
 
+
+/* додати пристрій */
 #add-device{
+    color: var(--gray);
+    border-top: 1px solid var(--gray-light);
+    display: list-item;
     min-height: auto;
 }
 
+/* кнопка по правому краю */
 #add-device button{
-    margin: 0;
-    background: var(--gray-light);
-    color: var(--black);
     pointer-events: none;
-    width: 30px;
-    height: 30px;
-    margin-left: auto;
-}
+    margin: 0 0 0 auto;
 
-#add-device.active button{
     text-indent: -9999px;
     pointer-events: all;
     width: 26px;
@@ -393,18 +392,21 @@ button:hover{
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%234a9ad5' viewBox='0 0 16 16'%3E%3Cpath d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z'/%3E%3C/svg%3E");
 }
 
+/* нумерований список (перелік девайсів) */
+ol.user-data{
+    margin: 10px 20px;
+}
+
 /* блоки, які показуються після кліку */
 li.insert{
     color: var(--gray);
     border-top: 1px solid var(--gray-light);
-    list-style-position: inside;
-    padding: 20px 0;
-    align-items: center;
     display: list-item;
+    min-height: auto;
 }
 
-ol.user-data{
-    margin: 10px 20px;
+li.insert p{
+    display: flex!important;
 }
 
 li.insert a{
@@ -418,4 +420,19 @@ li.insert a:hover{
 
 li.insert strong{
     color: var(--blue);
+    margin-left: 10px;
 }
+
+ol.user-data button{
+    pointer-events: none;
+    margin: 0 0 0 auto;
+
+    text-indent: -9999px;
+    pointer-events: all;
+    width: 26px;
+    height: 26px;
+    background: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%234a9ad5' viewBox='0 0 16 16'%3E%3Cpath d='M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z'/%3E%3Cpath fill-rule='evenodd' d='M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z'/%3E%3C/svg%3E");
+
+}
+
