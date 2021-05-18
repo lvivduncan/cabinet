@@ -125,7 +125,7 @@
 
 
                 <div class="user-confirm">
-                    <button data-fancybox="" data-src="#approuve" data-modal="true" href="javascript:;">Зберегти зміни</button>
+                    <button>Зберегти зміни</button>
                 </div>
 
             </div>
@@ -135,57 +135,54 @@
     </div>
     <!-- #cabinet -->
 
-    <div id="approuve" class="approuve" style="display: none;">
-        <span data-fancybox-close id="approuve-close"></span>
-
-        <p class="approuve-header">Для збереження, введіть пароль та натисніть "Підтвердити"</p>
-        <input type="password" placeholder="Пароль в особистий кабінет">
-        <button>Підтвердити</button>
-        <p><strong>Увага!</strong> Вартість негайної зміни тарифу: 30грн</p>
+    <div id="approuve" class="approuve">
+        <p>Для збереження, введіть пароль та натисніть "Підтвердити"</p>
+        <p><input type="password" placeholder="Пароль в особистий кабінет"></p>
+        <p><button>Підтвердити</button></p>
+        <p><b>Увага!</b> Вартість негайної зміни тарифу: 30грн</p>
     </div>
     <!-- #approuve -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="js/modal.js"></script>
 
     <script>
 
-        // 1. кнопка редагування сторінки
-        $('.edit').on('click', function () {
-            $(this).toggleClass('editable');
+{
+    const confirmButton = document.querySelector('.user-confirm');
+    
+    // кнопка редагування сторінки
+    document.querySelector('.edit').addEventListener('click', function(){
+        this.classList.toggle('editable');
 
-            $('select').toggleClass('disabled-select');
-
-            $('.user-confirm').removeClass('active');
+        document.querySelectorAll('select').forEach(item => {
+            item.classList.toggle('disabled-select');
         });
 
-        // 2. зміна -- показати кнопку        
-        $('#internet-value').on('change', function(){
-            var data = $('#internet-value').val().split(',');
-            
-            $('#internet-value-1').text(data[0]);
-            $('#internet-value-2').text(data[1]);
-            
-            $('.user-confirm').addClass('active');
-        });
+        confirmButton.classList.remove('active');
+    });
 
-        // 2.1 час зміни тарифу
-        $('#internet-time-change').on('change', function(){
-            if($('#internet-time-change').val() == 'Змінити негайно'){
-                $('#internet-time-now').addClass('active');
-            } else {
-                $('#internet-time-now').removeClass('active');
-            }
+    // зміна -- показати кнопку
+    document.querySelector('#internet-value').addEventListener('change', () => {
+        const data = document.querySelector('#internet-value').value.split(',');
 
-            $('.user-confirm').addClass('active');
-        });
+        document.querySelector('#internet-value-1').textContent = data[0];
+        document.querySelector('#internet-value-2').textContent = data[1];
 
-        // 3. fancybox
+        confirmButton.classList.add('active');
+    });
 
-        // 4. підтвердження
-        $('#approuve input[type="password"]').on('input', function () {
-            $('#approuve button').addClass('active');
-        });
+    // час зміни тарифу
+    document.querySelector('#internet-time-change').addEventListener('change', function() {
+        if(this.value == 'Змінити негайно'){
+            document.querySelector('#internet-time-now').classList.add('active');
+        } else {
+            document.querySelector('#internet-time-now').classList.remove('active');
+        }
+
+        confirmButton.classList.add('active');
+    });
+}
+
 	</script>
 
 </body>
