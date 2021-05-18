@@ -111,6 +111,8 @@ select {
 	padding: .375rem 1.75rem .375rem .75rem;
 	font-size: 1rem;
 	font-weight: 400;
+	font-family: inherit;
+    font-size: inherit;
 	line-height: 1.5;
 	color: var(--gray-dark);
 	background-color: var(--white-light);

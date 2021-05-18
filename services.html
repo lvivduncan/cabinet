@@ -607,16 +607,25 @@
     <script src="https://lvivduncan.github.io/wenet/js/jquery-3.6.0.min.js"></script>
     <script src="https://lvivduncan.github.io/wenet/js/owl.carousel.js"></script>
     <script src="https://lvivduncan.github.io/wenet/js/init.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
+    <!-- <script src="js/jquery.fancybox.min.js"></script> -->
+
+
+    <script src="js/edit-button.js"></script>
+    <script src="js/modal.js"></script>
+
     <script>
+
+
+
+
         (function () {
 
-            // 1. кнопка редагування сторінки
+/*             // 1. кнопка редагування сторінки
             $('.collapse').on('click', function () {
                 $(this).toggleClass('collapsed');
 
                 $(this).siblings('.hidden-area').fadeToggle(100);
-            });
+            }); */
 
             // 2.1.1 якщо клік -- кнопка стає активною
             $('input[type="checkbox"]').on('input', function () {
@@ -642,7 +651,6 @@
                 $('.calendar').toggleClass('active');
             });
 
-            // // todo:
             // ховаємо календар по кліку на будь-яке місце сторінки
             $('body').on('click', function(e){
                 if(e.target.className != 'select-date' && e.target.className != 'select-calendar'){

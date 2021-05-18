@@ -230,45 +230,34 @@
     </div>
     <!-- #cabinet -->
 
-    <div id="approuve" class="approuve" style="display: none;">
-        <span data-fancybox-close id="approuve-close"></span>
-
-        <p class="approuve-header">Для збереження, введіть пароль та натисніть "Підтвердити"</p>
-        <input type="password" placeholder="Пароль в особистий кабінет">
-        <button>Підтвердити</button>
-        <p><strong>Увага!</strong> Вартість негайної зміни тарифу: 30грн</p>
+    <div id="approuve" class="approuve">
+        <p>Для збереження, введіть пароль та натисніть "Підтвердити"</p>
+        <p><input type="password" placeholder="Пароль в особистий кабінет"></p>
+        <p><button>Підтвердити</button></p>
+        <p><b>Увага!</b> Вартість негайної зміни тарифу: 30грн</p>
     </div>
     <!-- #approuve -->
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/modal.js"></script>
 
     <script>
-        (function () {
 
-            // 1. кнопка редагування сторінки
-            $('.edit').on('click', function () {
+        // кнопка редагування сторінки
+        document.querySelector('.edit').addEventListener('click', function(){
+            this.classList.toggle('editable');
 
-                $(this).toggleClass('editable');
+            this.nextElementSibling.classList.toggle('edited');
 
-                $(this).next().toggleClass('edited');
+            document.querySelector('.user-confirm').classList.remove('active');
+        });
 
-                $('.user-confirm').removeClass('active');
+        // якщо були зміни у полях -- кнопка стає активною
+        document.querySelectorAll('.edit-area input').forEach(item => {
+            item.addEventListener('input', () => {
+                document.querySelector('.user-confirm').classList.add('active');
             });
+        });
 
-            // 2. якщо були зміни у полях -- кнопка стає активною
-            $('.edit-area input').on('input', function () {
-                $('.user-confirm').addClass('active');
-            });
-
-            // 3. fancybox
-
-            // 4. підтвердження
-            $('#approuve input[type="password"]').on('input', function () {
-                $('#approuve button').addClass('active');
-            });
-
-        })();
     </script>
 
 </body>

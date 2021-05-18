@@ -97,7 +97,7 @@
             </div>
 
             <div class="user-confirm active">
-                <button data-fancybox="" data-src="#approuve" data-modal="true" href="javascript:;">Активувати</button>
+                <button>Активувати</button>
             </div>
             
         </main>
@@ -105,18 +105,17 @@
     </div>
     <!-- #cabinet -->
 
-    <div id="approuve" class="approuve" style="display: none;">
-        <span data-fancybox-close="" id="approuve-close"></span>
+    <div id="approuve" class="approuve">
+        <!-- <span data-fancybox-close="" id="approuve-close"></span> -->
 
-        <p class="approuve-header">Для збереження, введіть пароль та натисніть "Підтвердити"</p>
-        <input type="password" placeholder="Пароль в особистий кабінет">
-        <button>Підтвердити</button>
-        <p><strong>Увага!</strong> Вартість негайної зміни тарифу: 30грн</p>
+        <p>Для збереження, введіть пароль та натисніть "Підтвердити"</p>
+        <p><input type="password" placeholder="Пароль в особистий кабінет"></p>
+        <p><button>Підтвердити</button></p>
+        <p><b>Увага!</b> Вартість негайної зміни тарифу: 30грн</p>
     </div>
     <!-- #approuve -->
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/modal.js"></script>
 
 </body>
 </html>
