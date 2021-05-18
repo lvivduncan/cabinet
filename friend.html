@@ -161,34 +161,60 @@
     </div>
     <!-- #cabinet -->
 
-    <script src="js/jquery.min.js"></script>
     <script>
+{
+    // create modal window wrapper
+    const modalWrapper = document.createElement('div');
+    modalWrapper.setAttribute('id', 'modal-wrapper');
 
-        // copy code
-        $('#copy-code').on('click', function(){
-            var copyCode = $('#copy-code').data('code');
+    // create modal notice
+    const modalNotice = document.createElement('div');
+    modalNotice.setAttribute('class', 'approuve active');
+    modalNotice.append('Ваш "код для друга" скопійовано!');
+    
+    document.querySelector('#copy-code').addEventListener('click', function(){
+        const code = document.querySelector('#copy-code').dataset.code;
+
+        // copy
+        navigator.clipboard.writeText(code)
+            .then( () => {
+                // add modal
+                document.body.className = 'modal-hidden';
+                document.body.append(modalWrapper, modalNotice);
+            })
+            .catch(err => console.log('код не вдалося скопіювати'));
+    });
+
+    // click close
+    modalWrapper.addEventListener('click', () => {
+
+        // clear
+        document.body.className = '';
+        modalWrapper.remove();
+        modalNotice.remove();
+
+    });
+
+    // esc button
+    document.addEventListener('keydown', e => {
+        if(e.code == 'Escape' || e.key == 'Escape'){
             
-            var $temp = $("<input>");
-            $("body").append($temp);
-            $temp.val(copyCode).select();
-            document.execCommand("copy");
-            $temp.remove();
+            // clear
+            document.body.className = '';
+            modalWrapper.remove();
+            modalNotice.remove();
+        }
+    });
 
-            $('#copy-code').append('<i class="active"></i>');
+    // якщо були зміни у полях -- кнопка стає активною
+    document.getElementById('insert-code').addEventListener('input', () => {
+        document.getElementById('user-confirm').classList.remove('disabled');
+    });
 
-            // $('#copy-code i').addClass('active');
+}
 
-            setTimeout(function(){
-                $('#copy-code i').removeClass('active');
-            },2000);
 
-        });
-
-        // insert code
-        $('#insert-code').on('input', function(){
-            $('#user-confirm').removeClass('disabled');
-        });
-
+         
     </script>
 </body>
 </html>
