@@ -2,32 +2,16 @@
 
 /* модальне вікно */
 .approuve{
-    background: var(--black);
-    color: var(--white);
-    border-radius: 5px;
-    padding: 20px 10px 15px;
-    max-width: 300px;
-    text-align: center;
-
     display: none;
-
-    /* width: 300px; */
-    /* min-height: 120px; */
-    /* position: absolute; */
-    /* top: calc(50% - 150px); */
-    /* left: calc(50% - 150px); */
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     z-index: 10;
-
-    text-align: center;
 }
 
 .approuve.active{
-    /* display: block; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,6 +20,12 @@
 .approuve-content{
     width: 300px;
     min-height: 120px;
+    max-width: 300px;
+    background: var(--black);
+    color: var(--white);
+    border-radius: 5px;
+    padding: 20px 10px 15px;
+    text-align: center;
 }
 
 
