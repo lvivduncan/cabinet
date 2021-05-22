@@ -11,19 +11,33 @@
 
     display: none;
 
-    width: 300px;
-    min-height: 120px;
-    position: absolute;
-    top: calc(50% - 150px);
-    left: calc(50% - 150px);
+    /* width: 300px; */
+    /* min-height: 120px; */
+    /* position: absolute; */
+    /* top: calc(50% - 150px); */
+    /* left: calc(50% - 150px); */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     z-index: 10;
 
     text-align: center;
 }
 
 .approuve.active{
-    display: block;
+    /* display: block; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.approuve-content{
+    width: 300px;
+    min-height: 120px;
+}
+
 
 .approuve p{
     margin: 20px 0;
