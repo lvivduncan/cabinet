@@ -10,24 +10,10 @@
     --blue: #4a9ad5;
     --blue-light: #ecf3f9; /* для календаря */
 
-    /* --gray: #a5a5a6; */
-    /* --gray-light: #eceded; */
-    /* --gray-dark: #534d54; */
     --text: #8a8887;
-
-    /* --green: #47ad33; */
-    /* --green-light: #d7e4cc; */
-
-    /* --black: #1b1b1a; */
-    /* --white: #fff; */
-
-    /* --red: #e30b0b; */
     --yellow: #ffffe3;
     --gold: #ffd700;
-    /* --yellow: #ffff00; */
     --yellow-light: #ffffde;
-
-
 
 /* стилі з нового шаблону сайту */
     --purpur: #ae5cfe;
@@ -52,10 +38,10 @@
 }
 
 body{
-    /* font-family: 'Open Sans', sans-serif; */
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     color: var(--black);
+    line-height: normal;
 }
 
 /* основний блок кабінету */

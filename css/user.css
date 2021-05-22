@@ -55,6 +55,11 @@
     display: block;
 }
 
+#user-description strong,
+#user-description span span{
+    display: inline;
+}
+
 #user-description strong{
     color: var(--black);
     font-weight: normal;
