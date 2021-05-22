@@ -16,7 +16,7 @@
     position: absolute;
     top: calc(50% - 150px);
     left: calc(50% - 150px);
-    z-index: 3;
+    z-index: 10;
 
     text-align: center;
 }
@@ -113,7 +113,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 1;
+    z-index: 9;
 }
 
 #modal-wrapper::before{
