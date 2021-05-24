@@ -3,6 +3,7 @@
 /* модальне вікно */
 .approuve{
     display: none;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -21,9 +22,7 @@
 }
 
 .approuve.active{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
 }
 
 .approuve p{
