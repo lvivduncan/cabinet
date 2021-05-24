@@ -191,6 +191,10 @@ ul.user-data{
     }    
 }
 
+#form-phone{
+    padding: 8px;
+}
+
 /* поля, які редагуються */
 .edit-area{}
 
