@@ -6,18 +6,15 @@
 
     position: fixed;
     top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    left: calc(50% - 150px);
     z-index: 10;
 
     width: 300px;
     min-height: 120px;
-    max-width: 300px;
     background: var(--black);
     color: var(--white);
     border-radius: 5px;
-    padding: 20px 10px 15px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -131,5 +128,6 @@
 
 body.modal-hidden{
     overflow: hidden;
-    padding-right: 6px;
+    padding-right: 7px;
+    width: calc(100% - 7px)
 }

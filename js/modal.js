@@ -4,14 +4,20 @@ const modalWrapper = document.createElement('div');
 modalWrapper.setAttribute('id', 'modal-wrapper');
 
 // approuve -- підтвердження
-document.querySelector('.user-confirm button').addEventListener('click', function(){
+document.querySelectorAll('.user-confirm button').forEach(item => {
+    item.addEventListener('click', function(){
 
-    // add modal
-    document.body.className = 'modal-hidden';
-    document.body.append(modalWrapper);
-
-    // show mobile basket
-    document.getElementById('approuve').classList.add('active');
+        const viewport = window.innerHeight;
+    
+        // add modal
+        document.body.className = 'modal-hidden';
+        document.body.append(modalWrapper);
+    
+        // show mobile basket
+        document.getElementById('approuve').classList.add('active');
+        document.getElementById('approuve').style.top = `${viewport/2-60}px`;
+    
+    });
 });
 
 // click close
